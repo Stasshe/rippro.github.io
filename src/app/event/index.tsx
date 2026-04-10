@@ -2,8 +2,8 @@
 
 import Link from 'next/link'
 import type { FC } from 'react'
-import { Events, type EventType } from '../../components/EventList'
-import { Layout } from '../../components/Layout'
+import { Events, type EventType } from '../../src/components/EventList'
+import { Layout } from '../../src/components/Layout'
 
 const sectionStyle = {
   marginLeft: '8px',

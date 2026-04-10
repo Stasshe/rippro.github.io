@@ -1,7 +1,7 @@
 /** @format */
 
-import AtCoderGraph from '../components/atcoder/AtCoderGraph'
-import { Layout } from '../components/Layout'
+import AtCoderGraph from '../../components/atcoder/AtCoderGraph'
+import { Layout } from '../../components/Layout'
 
 const AtCoderPage = () => {
   const sectionStyle = {

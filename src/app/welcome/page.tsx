@@ -2,8 +2,8 @@
 
 import Link from 'next/link'
 import YouTube from 'react-youtube'
-import Discord from '../components/discord'
-import { Layout } from '../components/Layout'
+import Discord from '../../components/discord'
+import { Layout } from '../../components/Layout'
 import flyer from '../public/RiPPro_Ad.png'
 import type { CSSProperties } from 'react'
 

@@ -1,8 +1,8 @@
 /** @format */
 
 import type { FC } from 'react'
-import { Layout } from '../components/Layout'
-import { type LinksType, type SectionType, sections } from '../components/Links'
+import { Layout } from '../../components/Layout'
+import { type LinksType, type SectionType, sections } from '../../components/Links'
 
 const sectionStyle = {
   marginLeft: '8px',

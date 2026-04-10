@@ -1,8 +1,8 @@
 /** @format */
 
 import type { FC } from 'react'
-import { Layout } from '../components/Layout'
-import Twitter from '../components/Twitter'
+import { Layout } from '../../components/Layout'
+import Twitter from '../../components/Twitter'
 
 const sectionStyle = {
   marginLeft: '8px',
