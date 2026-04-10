@@ -1,0 +1,36 @@
+{
+  "id": "acpc2016",
+  "title": "会津合宿 2016",
+  "day": "Day 1",
+  "date": {
+    "begin": "2016/9/17",
+    "end": "2016/9/19"
+  },
+  "judge": "http://judge.u-aizu.ac.jp/onlinejudge/index.jsp",
+  "detailURL": "https://web.archive.org/web/20200326193543/https://atnd.org/events/79743",
+  "problemSet": [
+    {
+      "college": "Day1(立命館大学)",
+      "link": "https://onlinejudge.u-aizu.ac.jp/beta/room.html#ACPC2016Day1"
+    },
+    {
+      "college": "Day2(会津大学)",
+      "link": "https://onlinejudge.u-aizu.ac.jp/beta/room.html#ACPC2016Day2"
+    },
+    {
+      "college": "Day3(北海道大学)",
+      "link": "https://onlinejudge.u-aizu.ac.jp/beta/room.html#RitsCamp16Day3"
+    }
+  ],
+  "commentary": [
+    { "title": "全体講評", "link": "kohyo.pdf" },
+    { "title": "A: キャベツ", "link": "A.pdf" },
+    { "title": "B: イカったー", "link": "B.pdf" },
+    { "title": "C: 失われしグラフ", "link": "C.pdf" },
+    { "title": "D: DAGトリオ(Easy)", "link": "D.pdf" },
+    { "title": "E: 札", "link": "E.pdf" },
+    { "title": "F: 紙の折りたたみ", "link": "F.pdf" },
+    { "title": "G: DAGトリオ(Hard)", "link": "G.pdf" }
+  ],
+  "place": "会津大学"
+}

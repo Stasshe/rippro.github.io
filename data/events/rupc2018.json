@@ -1,0 +1,36 @@
+{
+  "id": "rupc2018",
+  "title": "立命合宿 2018",
+  "day": "Day 1",
+  "date": {
+    "begin": "2018/3/26",
+    "end": "2018/3/28"
+  },
+  "judge": "http://judge.u-aizu.ac.jp/onlinejudge/index.jsp",
+  "detailURL": "https://web.archive.org/web/20180202123544/https://atnd.org/events/94033",
+  "problemSet": [
+    {
+      "college": "Day 1 (立命館大学)",
+      "link": "https://onlinejudge.u-aizu.ac.jp/beta/room.html#RitsCamp18Day1"
+    },
+    {
+      "college": "Day 2 (会津大学さん)",
+      "link": "https://onlinejudge.u-aizu.ac.jp/beta/room.html#RitsCamp18Day2"
+    },
+    {
+      "college": "Day 3 (北海道大学さん)",
+      "link": "https://onlinejudge.u-aizu.ac.jp/beta/room.html#RitsCamp18Day3"
+    }
+  ],
+  "commentary": [
+    { "title": "全体講評", "link": "kohyo.pdf" },
+    { "title": "A: 鳩ノ巣原理", "link": "A.pdf" },
+    { "title": "B: 写像", "link": "B.pdf" },
+    { "title": "C: 一致", "link": "C.pdf" },
+    { "title": "D: 水槽", "link": "D.pdf" },
+    { "title": "E: いたずらされたグラフ", "link": "E.pdf" },
+    { "title": "F: ごちうさ数", "link": "F.pdf" },
+    { "title": "G: エレベータ", "link": "G.pdf" }
+  ],
+  "place": "立命館大学 BKC"
+}

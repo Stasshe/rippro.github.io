@@ -1,0 +1,29 @@
+{
+  "id": "rupc2011",
+  "title": "立命館プログラミングコンテスト2011",
+  "date": {
+    "begin": "2011/10/15",
+    "end": ""
+  },
+  "judge": "http://judge.u-aizu.ac.jp/onlinejudge/index.jsp",
+  "problemSet": [
+    {
+      "college": "立命館大学",
+      "link": "https://onlinejudge.u-aizu.ac.jp/challenges/sources/VPC/RUPC?year=2011"
+    }
+  ],
+  "commentary": [
+    { "title": "問題A: スワップ暗号", "link": "A.pdf" },
+    { "title": "問題B: B問題", "link": "B.pdf" },
+    { "title": "問題C: Seishun 18 Kippu", "link": "C.pdf" },
+    { "title": "問題D: 伝説の剣", "link": "D.pdf" },
+    { "title": "問題E: アニペロ", "link": "E.pdf" },
+    { "title": "問題F: Farey Sequence", "link": "F.pdf" },
+    { "title": "問題G: 水時計", "link": "G.pdf" },
+    { "title": "問題H: Oh, My Goat!", "link": "H.pdf" },
+    { "title": "問題I: カスタムペイント職人", "link": "I.pdf" }
+  ],
+  "place": "立命館大学 BKC",
+  "hasIOData": true,
+  "writer": ["shirokurostone", "kioa341", "slip0110", "epee_noir", "Respect2D", "_shnyh"]
+}

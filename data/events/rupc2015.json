@@ -1,0 +1,38 @@
+{
+  "id": "rupc2015",
+  "title": "立命合宿 2015",
+  "day": "Day 1",
+  "date": {
+    "begin": "2015/3/14",
+    "end": "2015/3/16"
+  },
+  "detailURL": "https://web.archive.org/web/20150928232752/https://atnd.org/events/62742",
+  "problemSet": [
+    {
+      "college": "Day1(立命館大学)",
+      "link": "https://onlinejudge.u-aizu.ac.jp/beta/room.html#RitsCamp15Day1"
+    },
+    {
+      "college": "Day2(会津大学)",
+      "link": "https://onlinejudge.u-aizu.ac.jp/beta/room.html#RitsCamp15Day2"
+    },
+    {
+      "college": "Day3(北海道大学)",
+      "link": "https://onlinejudge.u-aizu.ac.jp/beta/room.html#RitsCamp15Day3"
+    }
+  ],
+  "commentary": [
+    { "title": "総評", "link": "all.pdf" },
+    { "title": "A: Soccer", "link": "A.pdf" },
+    { "title": "B: RUPC", "link": "B.pdf" },
+    { "title": "C: Shopping", "link": "C.pdf" },
+    { "title": "D: Hopping Hearts", "link": "D.pdf" },
+    { "title": "E: Ocarina of Time", "link": "E.pdf" },
+    { "title": "F: Tree", "link": "F.pdf" },
+    { "title": "G: Bob's Bomb", "link": "G.pdf" }
+  ],
+  "picture": "rupc2015.png",
+  "judge": "http://judge.u-aizu.ac.jp/onlinejudge/index.jsp",
+  "place": "立命館大学 BKC",
+  "hasSchedule": true
+}

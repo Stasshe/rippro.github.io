@@ -1,0 +1,35 @@
+{
+  "id": "rupc2016",
+  "title": "立命合宿 2016",
+  "day": "Day 1",
+  "date": {
+    "begin": "2016/3/6",
+    "end": "2016/3/8"
+  },
+  "judge": "http://judge.u-aizu.ac.jp/onlinejudge/index.jsp",
+  "problemSet": [
+    {
+      "college": "Day 1 (立命館大学)",
+      "link": "https://onlinejudge.u-aizu.ac.jp/beta/room.html#RitsCamp16Day1"
+    },
+    {
+      "college": "Day 2 (会津大学さん)",
+      "link": "https://onlinejudge.u-aizu.ac.jp/beta/room.html#RitsCamp16Day2"
+    },
+    {
+      "college": "Day 3 (北海道大学さん)",
+      "link": "https://onlinejudge.u-aizu.ac.jp/beta/room.html#RitsCamp16Day3"
+    }
+  ],
+  "commentary": [
+    { "title": "A: 秤", "link": "A.pdf" },
+    { "title": "B: ハミング距離", "link": "B.pdf" },
+    { "title": "C: 足し算掛け算", "link": "C.pdf" },
+    { "title": "D: スキャナー", "link": "D.pdf" },
+    { "title": "E: 28", "link": "E.pdf" },
+    { "title": "F: リレー", "link": "F.pdf" },
+    { "title": "別解", "link": "F_tm.pdf" },
+    { "title": "G: 塗るだけ", "link": "G.pdf" }
+  ],
+  "place": "立命館大学 BKC"
+}
