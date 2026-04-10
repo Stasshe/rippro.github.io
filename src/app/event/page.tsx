@@ -24,7 +24,7 @@ const Event: FC = () => {
     >
       {Events.map((event: EventType) => {
         return (
-          <div style={sectionStyle} key={event.title}>
+          <div style={sectionStyle} key={event.id}>
             <h2>
               {event.title} {event.date ? event.date + ' ' : ''}解説
             </h2>

@@ -8,16 +8,8 @@ import { EventDetails, type EventDetailType } from '../../../components/EventLis
 import { Layout } from '../../../components/Layout';
 
 const defaultId = 'rupc2018';
-const getEntries: Function = (contentId: string, key: keyof EventDetailType) => {
-  const eventDetail = EventDetails[contentId] ?? EventDetails[defaultId];
-  if (!eventDetail) {
-    return '';
-  }
 
-  return eventDetail[key] ?? '';
-};
-
-const extension: Function = (filename: string) => {
+const extension = (filename: string) => {
   const parts = filename.split('.');
   return parts[parts.length - 1];
 };
@@ -228,28 +220,29 @@ const tdStyle = {
 const EventDetail: FC = () => {
   const params = useParams<{ id?: string }>();
   const contestId = typeof params?.id === 'string' ? params.id : defaultId;
+  const eventDetail = EventDetails[contestId] ?? EventDetails[defaultId];
 
   return (
     <Layout
-      title={`${getEntries(contestId, 'title')} - RiPPro(立命館大学情報理工学部プロジェクト団体)`}
+      title={`${eventDetail.title} - RiPPro(立命館大学情報理工学部プロジェクト団体)`}
       description="過去に開催したイベント一覧ページ"
     >
       <div style={sectionStyle}>
-        <h2>{getEntries(contestId, 'title')}</h2>
-        <PictureElement contestId={contestId || defaultId} link={getEntries(contestId, 'picture')} />
-        <EventDateElement date={getEntries(contestId, 'date')} />
-        <JudgeSiteElement judgeURL={getEntries(contestId, 'judge')} />
-        <EventDetailElement detailURL={getEntries(contestId, 'detailURL')} />
-        <PlaceElement place={getEntries(contestId, 'place')} />
-        <ProblemSetElement problemSet={getEntries(contestId, 'problemSet')} contestId={contestId || defaultId} />
+        <h2>{eventDetail.title}</h2>
+        <PictureElement contestId={contestId || defaultId} link={eventDetail.picture} />
+        <EventDateElement date={eventDetail.date} />
+        <JudgeSiteElement judgeURL={eventDetail.judge} />
+        <EventDetailElement detailURL={eventDetail.detailURL} />
+        <PlaceElement place={eventDetail.place} />
+        <ProblemSetElement problemSet={eventDetail.problemSet} contestId={contestId || defaultId} />
         <CommentaryElement
           contestId={contestId || defaultId}
-          day={getEntries(contestId, 'day')}
-          commentary={getEntries(contestId, 'commentary')}
+          day={eventDetail.day}
+          commentary={eventDetail.commentary}
         />
-        <IODataElement iodata={getEntries(contestId, 'iodata')} />
-        <ScheduleElement schedule={getEntries(contestId, 'schedule')} />
-        <WriterElement writer={getEntries(contestId, 'writer')} />
+        <IODataElement iodata={eventDetail.iodata} />
+        <ScheduleElement schedule={eventDetail.schedule} />
+        <WriterElement writer={eventDetail.writer} />
       </div>
     </Layout>
   );

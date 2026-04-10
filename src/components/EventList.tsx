@@ -20,17 +20,17 @@ const thStyle: CSSProperties = {
   fontWeight: 'bold'
 };
 
-type problemSetType = {
+type ProblemSetType = {
   college: string;
   link: string;
 };
 
-type problemType = {
+type CommentaryType = {
   title: string;
   link: string;
 };
 
-type otherContentType = {
+type OtherContentType = {
   title: string;
   content: ReactNode;
 };
@@ -40,23 +40,21 @@ export type EventDetailType = {
   day?: 'Day 1' | 'Day 2' | 'Day 3';
   date: {
     begin: string;
-    end: string;
+    end?: string;
   };
   detailURL?: string;
-  problemSet: problemSetType[];
-  commentary: problemType[];
+  problemSet: ProblemSetType[];
+  commentary: CommentaryType[];
   writer?: string[];
   picture?: string;
   judge: string;
   iodata?: ReactNode;
   schedule?: ReactNode;
   place: string;
-  otherContent?: otherContentType[];
+  otherContent?: OtherContentType[];
 };
 
-type EventDetailsType = {
-  [key: string]: EventDetailType;
-};
+type EventDetailsType = Record<string, EventDetailType>;
 
 export const EventDetails: EventDetailsType = {
   rupc2024: {
@@ -679,7 +677,7 @@ export const EventDetails: EventDetailsType = {
 export type EventType = {
   title: string;
   detail: string;
-  date?: 'Day 1' | 'Day 2' | 'Day 3' | undefined;
+  date?: 'Day 1' | 'Day 2' | 'Day 3';
   id: string;
 };
 
