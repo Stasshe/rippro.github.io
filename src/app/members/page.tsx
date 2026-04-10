@@ -2,7 +2,7 @@
 'use client';
 
 import AtCoderGraph from '../../components/atcoder/AtCoderGraph';
-import { Layout } from '../../components/Layout';
+import { Layout } from '../../components/PageLayout';
 
 const AtCoderPage = () => {
   const sectionStyle = {

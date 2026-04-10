@@ -2,6 +2,8 @@
 
 @import 'tailwindcss';
 
+@tailwind utilities;
+
 body {
   overflow-y: scroll;
   line-height: 1.5em;

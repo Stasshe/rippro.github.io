@@ -1,7 +1,7 @@
 'use client';
 
 import type { FC } from 'react';
-import { Layout } from '../../components/Layout';
+import { Layout } from '../../components/PageLayout';
 import { type LinksType, type SectionType, sections } from '../../components/Links';
 
 const sectionStyle = {

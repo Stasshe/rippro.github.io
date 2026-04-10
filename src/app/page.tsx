@@ -3,7 +3,7 @@
 
 import type { NextPage } from 'next';
 import IndexArticles from '../components/IndexArticles';
-import { Layout } from '../components/Layout';
+import { Layout } from '../components/PageLayout';
 import Twitter from '../components/Twitter';
 
 const Home: NextPage = () => {

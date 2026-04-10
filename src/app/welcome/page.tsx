@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import YouTube from 'react-youtube';
 import Discord from '../../components/discord';
-import { Layout } from '../../components/Layout';
+import { Layout } from '../../components/PageLayout';
 import type { CSSProperties } from 'react';
 
 const sectionStyle: CSSProperties = {

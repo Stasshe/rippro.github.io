@@ -1,5 +1,5 @@
 import { getAllEventsFromMdx, getEventById } from '@/lib/eventMdx';
-import { Layout } from '../../../components/Layout';
+import { Layout } from '../../../components/PageLayout';
 
 const sectionStyle = {
   marginLeft: '8px',
