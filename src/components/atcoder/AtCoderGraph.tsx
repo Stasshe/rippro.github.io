@@ -1,77 +1,77 @@
 /** @format */
 
-import Highcharts from 'highcharts'
-import HighchartsReact from 'highcharts-react-official'
-import React from 'react'
-import styles from './AtCoderGraph.module.css'
+import Highcharts from 'highcharts';
+import HighchartsReact from 'highcharts-react-official';
+import React from 'react';
+import styles from './AtCoderGraph.module.css';
 
-type Props = {}
+type Props = {};
 
 type State = {
-  userIDs: string[]
-  acceptedCounts: number[]
-  loaded: boolean
-}
+  userIDs: string[];
+  acceptedCounts: number[];
+  loaded: boolean;
+};
 
 type UserInfoType = {
-  userID: string
-  acceptedCount: number
-}
+  userID: string;
+  acceptedCount: number;
+};
 
 class AtCoderGraph extends React.Component<{}, State> {
   constructor(props: Props) {
-    super(props)
+    super(props);
     this.state = {
       userIDs: [],
       acceptedCounts: [],
       loaded: false
-    }
+    };
   }
 
   componentDidMount() {
     import('highcharts/modules/exporting')
       .then((module) => {
-        const HighchartsExporting: any = module.default ?? module
+        const HighchartsExporting: any = module.default ?? module;
         if (typeof HighchartsExporting === 'function') {
-          HighchartsExporting(Highcharts)
+          HighchartsExporting(Highcharts);
         } else if (HighchartsExporting && typeof HighchartsExporting.default === 'function') {
-          HighchartsExporting.default(Highcharts)
+          HighchartsExporting.default(Highcharts);
         } else {
-          console.warn('Highcharts exporting module did not export a function', HighchartsExporting)
+          console.warn('Highcharts exporting module did not export a function', HighchartsExporting);
         }
       })
       .catch((error) => {
-        console.error('Highcharts exporting load failed', error)
-      })
-    this.getUsersInfo()
-    this.setState({ loaded: true })
+        console.error('Highcharts exporting load failed', error);
+      });
+    this.getUsersInfo();
+    this.setState({ loaded: true });
   }
 
   getUsersInfo = () => {
     const url =
-      'https://script.google.com/macros/s/AKfycbxZEjsW21O2Tg4IqwHZOS8T-JpoRIbyMwBvcvFtZI92LOT6yz-PfFjVdUihBlmZxzsH/exec'
+      'https://script.google.com/macros/s/AKfycbxZEjsW21O2Tg4IqwHZOS8T-JpoRIbyMwBvcvFtZI92LOT6yz-PfFjVdUihBlmZxzsH/exec';
     this.request(url).then((responseData: any) => {
       const usersInfo: UserInfoType[] = responseData
         .map((data: any) => {
           return {
             userID: data.userID as string,
             acceptedCount: data.count as number
-          }
+          };
         })
-        .sort((user1: UserInfoType, user2: UserInfoType) => user2.acceptedCount - user1.acceptedCount)
+        .sort((user1: UserInfoType, user2: UserInfoType) => user2.acceptedCount - user1.acceptedCount);
       this.setState({
         userIDs: usersInfo.map((userInfo: UserInfoType) => userInfo.userID),
         acceptedCounts: usersInfo.map((userInfo: UserInfoType) => userInfo.acceptedCount)
-      })
-    })
-  }
+      });
+    });
+  };
   request = (url: string) => {
     return fetch(url)
       .then((res) => res.json())
       .catch((error) => {
-        console.error('Fetch Error:', error)
-      })
-  }
+        console.error('Fetch Error:', error);
+      });
+  };
 
   RenderSummary = () => {
     const options = {
@@ -120,17 +120,17 @@ class AtCoderGraph extends React.Component<{}, State> {
           }
         ]
       }
-    }
-    return <HighchartsReact highcharts={Highcharts} options={options} />
-  }
+    };
+    return <HighchartsReact highcharts={Highcharts} options={options} />;
+  };
 
   render() {
     if (!this.state.loaded) {
-      return <div className={styles.body} />
+      return <div className={styles.body} />;
     }
 
-    return <div className={`${styles.body}`}>{<this.RenderSummary />}</div>
+    return <div className={`${styles.body}`}>{<this.RenderSummary />}</div>;
   }
 }
 
-export default AtCoderGraph
+export default AtCoderGraph;

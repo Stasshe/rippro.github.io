@@ -1,4 +1,4 @@
-const nextCoreWebVitals = require('eslint-config-next/core-web-vitals')
+const nextCoreWebVitals = require('eslint-config-next/core-web-vitals');
 
 module.exports = [
   {
@@ -10,4 +10,4 @@ module.exports = [
       '@next/next/no-img-element': 'off'
     }
   }
-]
+];

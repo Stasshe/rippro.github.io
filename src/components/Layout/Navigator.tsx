@@ -1,11 +1,11 @@
 /** @format */
 
-import Button from '@mui/material/Button'
-import Stack from '@mui/material/Stack'
-import Link from 'next/link'
-import type { FC } from 'react'
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import Link from 'next/link';
+import type { FC } from 'react';
 
-import styles from './Navigator.module.css'
+import styles from './Navigator.module.css';
 
 const Navigator: FC = () => {
   return (
@@ -41,7 +41,7 @@ const Navigator: FC = () => {
         </Button>
       </Link>
     </Stack>
-  )
-}
+  );
+};
 
-export default Navigator
+export default Navigator;

@@ -1,13 +1,13 @@
 /** @format */
 
-import type { FC } from 'react'
-import { Timeline } from 'react-twitter-widgets'
+import type { FC } from 'react';
+import { Timeline } from 'react-twitter-widgets';
 
 const sectionStyle = {
   marginLeft: '8px',
   padding: '2px',
   fontSize: '11pt'
-}
+};
 
 const Header: FC = () => {
   return (
@@ -30,7 +30,7 @@ const Header: FC = () => {
         }}
       />
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

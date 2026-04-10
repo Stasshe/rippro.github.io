@@ -1,19 +1,19 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
 
 const discordWrapperStyle = {
   display: 'flex',
   justifyContent: 'center'
-}
+};
 
 function Discord() {
   useEffect(() => {
-    const script = document.createElement('script')
-    script.src = 'https://platform.twitter.com/widgets.js'
-    document.body.appendChild(script)
+    const script = document.createElement('script');
+    script.src = 'https://platform.twitter.com/widgets.js';
+    document.body.appendChild(script);
     return () => {
-      document.body.removeChild(script)
-    }
-  }, [])
+      document.body.removeChild(script);
+    };
+  }, []);
   return (
     <div style={discordWrapperStyle}>
       <blockquote className="twitter-tweet">
@@ -25,7 +25,7 @@ function Discord() {
         &mdash; RiPPro (@PJ_RiPPro) <a href="https://x.com/PJ_RiPPro/status/1907408404735545444">April 2, 2025</a>
       </blockquote>{' '}
     </div>
-  )
+  );
 }
 
-export default Discord
+export default Discord;

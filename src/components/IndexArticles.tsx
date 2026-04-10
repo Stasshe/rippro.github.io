@@ -1,15 +1,15 @@
 /** @format */
 
-import Link from 'next/link'
-import type { FC } from 'react'
+import Link from 'next/link';
+import type { FC } from 'react';
 
-import articleStyles from './IndexArticles.module.css'
+import articleStyles from './IndexArticles.module.css';
 
 const sectionStyle = {
   marginLeft: '8px',
   padding: '2px',
   fontSize: '11pt'
-}
+};
 
 const IndexArticles: FC = () => {
   return (
@@ -72,7 +72,7 @@ const IndexArticles: FC = () => {
         </dl>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default IndexArticles
+export default IndexArticles;

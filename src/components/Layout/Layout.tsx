@@ -1,16 +1,16 @@
-import type { FC, ReactNode } from 'react'
-import Footer from './Footer'
-import Head from './Head'
-import Header from './Header'
+import type { FC, ReactNode } from 'react';
+import Footer from './Footer';
+import Head from './Head';
+import Header from './Header';
 
-import styles from './Layout.module.css'
+import styles from './Layout.module.css';
 
 type LayoutProps = {
-  headerChild?: ReactNode
-  title?: string
-  description?: string
-  children?: ReactNode
-}
+  headerChild?: ReactNode;
+  title?: string;
+  description?: string;
+  children?: ReactNode;
+};
 
 export const Layout: FC<LayoutProps> = ({ children, title, description }) => (
   <div className={styles.body}>
@@ -21,4 +21,4 @@ export const Layout: FC<LayoutProps> = ({ children, title, description }) => (
       <Footer />
     </div>
   </div>
-)
+);

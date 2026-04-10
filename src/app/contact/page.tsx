@@ -1,14 +1,14 @@
 /** @format */
 
-import type { FC } from 'react'
-import { Layout } from '../../components/Layout'
-import Twitter from '../../components/Twitter'
+import type { FC } from 'react';
+import { Layout } from '../../components/Layout';
+import Twitter from '../../components/Twitter';
 
 const sectionStyle = {
   marginLeft: '8px',
   padding: '2px',
   fontSize: '11pt'
-}
+};
 
 const Contact: FC = () => {
   return (
@@ -43,7 +43,7 @@ const Contact: FC = () => {
       </div>
       <Twitter />
     </Layout>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

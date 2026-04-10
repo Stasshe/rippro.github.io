@@ -1,62 +1,62 @@
 /** @format */
-import type { ReactNode, CSSProperties } from 'react'
+import type { ReactNode, CSSProperties } from 'react';
 const tableStyle: CSSProperties = {
   borderCollapse: 'collapse',
   width: '100%'
-}
+};
 
 const trStyle: CSSProperties = {
   border: '1px solid black'
-}
+};
 
 const tdStyle: CSSProperties = {
   border: '1px solid black',
   padding: '8px'
-}
+};
 
 const thStyle: CSSProperties = {
   border: '1px solid black',
   padding: '8px',
   fontWeight: 'bold'
-}
+};
 
 type problemSetType = {
-  college: string
-  link: string
-}
+  college: string;
+  link: string;
+};
 
 type problemType = {
-  title: string
-  link: string
-}
+  title: string;
+  link: string;
+};
 
 type otherContentType = {
-  title: string
-  content: ReactNode
-}
+  title: string;
+  content: ReactNode;
+};
 
 export type EventDetailType = {
-  title: string
-  day?: 'Day 1' | 'Day 2' | 'Day 3'
+  title: string;
+  day?: 'Day 1' | 'Day 2' | 'Day 3';
   date: {
-    begin: string
-    end: string
-  }
-  detailURL?: string
-  problemSet: problemSetType[]
-  commentary: problemType[]
-  writer?: string[]
-  picture?: string
-  judge: string
-  iodata?: ReactNode
-  schedule?: ReactNode
-  place: string
-  otherContent?: otherContentType[]
-}
+    begin: string;
+    end: string;
+  };
+  detailURL?: string;
+  problemSet: problemSetType[];
+  commentary: problemType[];
+  writer?: string[];
+  picture?: string;
+  judge: string;
+  iodata?: ReactNode;
+  schedule?: ReactNode;
+  place: string;
+  otherContent?: otherContentType[];
+};
 
 type EventDetailsType = {
-  [key: string]: EventDetailType
-}
+  [key: string]: EventDetailType;
+};
 
 export const EventDetails: EventDetailsType = {
   rupc2024: {
@@ -674,25 +674,24 @@ export const EventDetails: EventDetailsType = {
     ),
     writer: ['shirokurostone', 'kioa341', 'slip0110', 'epee_noir', 'Respect2D', '_shnyh']
   }
-}
+};
 
 export type EventType = {
-  title: string
-  detail: string
-  date?: 'Day 1' | 'Day 2' | 'Day 3'
-  id: string
-}
+  title: string;
+  detail: string;
+  date?: 'Day 1' | 'Day 2' | 'Day 3' | undefined;
+  id: string;
+};
 
-export const Events: EventType[] = Object.keys(EventDetails).map((id) => {
-  const event: EventDetailType = EventDetails[id]
-  const date = event.date?.begin && event.date?.end ? `${event.date.begin} - ${event.date.end}` : event.date?.begin
+export const Events: EventType[] = Object.entries(EventDetails).map(([id, event]) => {
+  const date = event.date?.begin && event.date?.end ? `${event.date.begin} - ${event.date.end}` : event.date?.begin;
   const detail = event.place.includes('立命')
     ? `${event.place} にて ${date} 合宿を開催しました．`
-    : `${event.place} にて ${date} 合宿に参加しました．`
+    : `${event.place} にて ${date} 合宿に参加しました．`;
   return {
     title: event.title,
     detail: detail,
-    date: event.day,
+    ...(event.day ? { date: event.day } : {}),
     id: id
-  }
-})
+  };
+});

@@ -1,9 +1,9 @@
 /** @format */
 
-import Link from 'next/link'
-import type { FC } from 'react'
-import styles from './Head.module.css'
-import Navigator from './Navigator'
+import Link from 'next/link';
+import type { FC } from 'react';
+import styles from './Head.module.css';
+import Navigator from './Navigator';
 
 const Header: FC = () => {
   return (
@@ -13,7 +13,7 @@ const Header: FC = () => {
       </Link>
       <Navigator />
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
