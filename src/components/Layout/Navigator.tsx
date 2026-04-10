@@ -35,7 +35,7 @@ const Navigator: FC = () => {
           リンク
         </Button>
       </Link>
-      <Link href="/menbers">
+      <Link href="/members">
         <Button variant="text" className={styles.navibutton}>
           部員向け
         </Button>

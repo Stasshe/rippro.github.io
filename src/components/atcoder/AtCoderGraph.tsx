@@ -76,7 +76,6 @@ class AtCoderGraph extends React.Component<{}, State> {
   RenderSummary = () => {
     const options = {
       chart: {
-        polar: true,
         type: 'bar',
         height: '100%'
       },

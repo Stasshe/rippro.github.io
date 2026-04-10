@@ -1,8 +1,5 @@
 /** @format */
 
-'use client';
-
-import { useParams } from 'next/navigation';
 import type { FC, ReactNode } from 'react';
 import { EventDetails, type EventDetailType } from '../../../components/EventList';
 import { Layout } from '../../../components/Layout';
@@ -221,9 +218,12 @@ const tdStyle = {
   padding: '8px'
 };
 
-const EventDetail: FC = () => {
-  const params = useParams<{ id?: string }>();
-  const contestId = typeof params?.id === 'string' ? params.id : defaultId;
+type PageProps = {
+  params: { id: string };
+};
+
+const EventDetail: FC<PageProps> = ({ params }) => {
+  const contestId = params.id;
   const eventDetail: EventDetailType | undefined = EventDetails[contestId] ?? EventDetails[defaultId];
 
   if (!eventDetail) {
@@ -261,5 +261,11 @@ const EventDetail: FC = () => {
     </Layout>
   );
 };
+
+export async function generateStaticParams() {
+  return Object.keys(EventDetails).map((id) => ({
+    id
+  }));
+}
 
 export default EventDetail;
