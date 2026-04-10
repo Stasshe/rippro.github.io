@@ -1,10 +1,175 @@
 /** @format */
 
 import type { FC, ReactNode } from 'react';
-import { EventDetails, type EventDetailType } from '../../../components/EventList';
+import { eventDataMap, type RawEventData } from '@/lib/eventData';
 import { Layout } from '../../../components/Layout';
 
 const defaultId = 'rupc2018';
+
+// Schedule data for specific events
+const tableStyle = {
+  borderCollapse: 'collapse' as const,
+  width: '100%'
+};
+
+const trStyle = {
+  border: '1px solid black'
+};
+
+const tdStyle = {
+  border: '1px solid black',
+  padding: '8px'
+};
+
+const thStyle = {
+  border: '1px solid black',
+  padding: '8px',
+  fontWeight: 'bold'
+};
+
+const rupc2015Schedule = (
+  <table style={tableStyle}>
+    <thead>
+      <tr style={trStyle}>
+        <th style={thStyle}>Day</th>
+        <th style={thStyle}>Time</th>
+        <th style={thStyle}></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style={trStyle}>
+        <th style={thStyle} rowSpan={5}>
+          Day 1
+        </th>
+        <td style={tdStyle}>13:00 - 14:00</td>
+        <td style={tdStyle}>集合，開会，自己紹介など</td>
+      </tr>
+      <tr style={trStyle}>
+        <td style={tdStyle}>14:00 - 14:30</td>
+        <td style={tdStyle}>チーム編成</td>
+      </tr>
+      <tr style={trStyle}>
+        <td style={tdStyle}>14:30 - 17:30</td>
+        <td style={tdStyle}>模擬コンテスト1 (3時間セット)</td>
+      </tr>
+      <tr style={trStyle}>
+        <td style={tdStyle}>17:30 - 18:30</td>
+        <td style={tdStyle}>問題解説</td>
+      </tr>
+      <tr style={trStyle}>
+        <td style={tdStyle}>19:00 -</td>
+        <td style={tdStyle}>懇親会</td>
+      </tr>
+      <tr style={trStyle}>
+        <th style={thStyle} rowSpan={4}>
+          Day 2
+        </th>
+        <td style={tdStyle}>10:00 - 11:00</td>
+        <td style={tdStyle}>集合・チーム編成</td>
+      </tr>
+      <tr style={trStyle}>
+        <td style={tdStyle}>11:00 - 16:00</td>
+        <td style={tdStyle}>模擬コンテスト2 (5時間セット)</td>
+      </tr>
+      <tr style={trStyle}>
+        <td style={tdStyle}>16:00 - 17:00</td>
+        <td style={tdStyle}>問題解説</td>
+      </tr>
+      <tr style={trStyle}>
+        <td style={tdStyle}>19:00 -</td>
+        <td style={tdStyle}>懇親会</td>
+      </tr>
+      <tr style={trStyle}>
+        <th style={thStyle} rowSpan={3}>
+          Day 3
+        </th>
+        <td style={tdStyle}>09:00 - 10:00</td>
+        <td style={tdStyle}>集合・チーム編成</td>
+      </tr>
+      <tr style={trStyle}>
+        <td style={tdStyle}>10:00 - 13:00</td>
+        <td style={tdStyle}>模擬コンテスト3 (3時間セット)</td>
+      </tr>
+      <tr style={trStyle}>
+        <td style={tdStyle}>13:00 -</td>
+        <td style={tdStyle}>問題解説</td>
+      </tr>
+    </tbody>
+  </table>
+);
+
+const rupc2013Schedule = (
+  <table style={tableStyle}>
+    <thead>
+      <tr style={trStyle}>
+        <th style={thStyle}>Day</th>
+        <th style={thStyle}>Time</th>
+        <th style={thStyle}></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style={trStyle}>
+        <th style={thStyle} rowSpan={5}>
+          Day 1
+        </th>
+        <td style={tdStyle}>13:00 - 14:00</td>
+        <td style={tdStyle}>集合，開会，自己紹介など</td>
+      </tr>
+      <tr style={trStyle}>
+        <td style={tdStyle}>14:00 - 14:30</td>
+        <td style={tdStyle}>チーム編成</td>
+      </tr>
+      <tr style={trStyle}>
+        <td style={tdStyle}>14:30 - 17:30</td>
+        <td style={tdStyle}>模擬コンテスト1 (3時間セット)</td>
+      </tr>
+      <tr style={trStyle}>
+        <td style={tdStyle}>17:30 - 18:30</td>
+        <td style={tdStyle}>問題解説</td>
+      </tr>
+      <tr style={trStyle}>
+        <td style={tdStyle}>19:00 -</td>
+        <td style={tdStyle}>懇親会</td>
+      </tr>
+      <tr style={trStyle}>
+        <th style={thStyle} rowSpan={3}>
+          Day 2
+        </th>
+        <td style={tdStyle}>10:00 - 11:00</td>
+        <td style={tdStyle}>集合・チーム編成</td>
+      </tr>
+      <tr style={trStyle}>
+        <td style={tdStyle}>11:00 - 16:00</td>
+        <td style={tdStyle}>模擬コンテスト2 (5時間セット)</td>
+      </tr>
+      <tr style={trStyle}>
+        <td style={tdStyle}>16:00 - 17:00</td>
+        <td style={tdStyle}>問題解説</td>
+      </tr>
+      <tr style={trStyle}>
+        <th style={thStyle} rowSpan={3}>
+          Day 3
+        </th>
+        <td style={tdStyle}>09:00 - 10:00</td>
+        <td style={tdStyle}>集合・チーム編成</td>
+      </tr>
+      <tr style={trStyle}>
+        <td style={tdStyle}>10:00 - 13:00</td>
+        <td style={tdStyle}>模擬コンテスト3 (3時間セット)</td>
+      </tr>
+      <tr style={trStyle}>
+        <td style={tdStyle}>14:00 - 15:00</td>
+        <td style={tdStyle}>問題解説</td>
+      </tr>
+    </tbody>
+  </table>
+);
+
+const rupc2011IOData = (
+  <a href="dataset.zip" download>
+    データセット
+  </a>
+);
 
 const extension = (filename: string) => {
   const parts = filename.split('.');
@@ -204,29 +369,15 @@ const sectionStyle = {
   fontSize: '11pt'
 };
 
-const tableStyle = {
-  borderCollapse: 'collapse' as const,
-  width: '100%'
-};
-
-const trStyle = {
-  border: '1px solid black'
-};
-
-const tdStyle = {
-  border: '1px solid black',
-  padding: '8px'
-};
-
 type PageProps = {
   params: { id: string };
 };
 
 const EventDetail: FC<PageProps> = ({ params }) => {
   const contestId = params.id;
-  const eventDetail: EventDetailType | undefined = EventDetails[contestId] ?? EventDetails[defaultId];
+  const rawEventDetail: RawEventData | undefined = eventDataMap[contestId] ?? eventDataMap[defaultId];
 
-  if (!eventDetail) {
+  if (!rawEventDetail) {
     return (
       <Layout title="イベントが見つかりません - RiPPro(立命館大学情報理工学部プロジェクト団体)">
         <div style={sectionStyle}>
@@ -236,34 +387,43 @@ const EventDetail: FC<PageProps> = ({ params }) => {
     );
   }
 
+  // Enrich event data with schedule and iodata
+  const iodata = rawEventDetail.hasIOData && rawEventDetail.id === 'rupc2011' ? rupc2011IOData : undefined;
+  const schedule =
+    rawEventDetail.hasSchedule && rawEventDetail.id === 'rupc2015'
+      ? rupc2015Schedule
+      : rawEventDetail.hasSchedule && rawEventDetail.id === 'rupc2013'
+        ? rupc2013Schedule
+        : undefined;
+
   return (
     <Layout
-      title={`${eventDetail.title} - RiPPro(立命館大学情報理工学部プロジェクト団体)`}
+      title={`${rawEventDetail.title} - RiPPro(立命館大学情報理工学部プロジェクト団体)`}
       description="過去に開催したイベント一覧ページ"
     >
       <div style={sectionStyle}>
-        <h2>{eventDetail.title}</h2>
-        <PictureElement contestId={contestId || defaultId} link={eventDetail.picture} />
-        <EventDateElement date={eventDetail.date} />
-        <JudgeSiteElement judgeURL={eventDetail.judge} />
-        <EventDetailElement detailURL={eventDetail.detailURL} />
-        <PlaceElement place={eventDetail.place} />
-        <ProblemSetElement problemSet={eventDetail.problemSet} contestId={contestId || defaultId} />
+        <h2>{rawEventDetail.title}</h2>
+        <PictureElement contestId={contestId || defaultId} link={rawEventDetail.picture} />
+        <EventDateElement date={rawEventDetail.date} />
+        <JudgeSiteElement judgeURL={rawEventDetail.judge} />
+        <EventDetailElement detailURL={rawEventDetail.detailURL} />
+        <PlaceElement place={rawEventDetail.place} />
+        <ProblemSetElement problemSet={rawEventDetail.problemSet} contestId={contestId || defaultId} />
         <CommentaryElement
           contestId={contestId || defaultId}
-          day={eventDetail.day}
-          commentary={eventDetail.commentary}
+          day={rawEventDetail.day}
+          commentary={rawEventDetail.commentary}
         />
-        <IODataElement iodata={eventDetail.iodata} />
-        <ScheduleElement schedule={eventDetail.schedule} />
-        <WriterElement writer={eventDetail.writer} />
+        <IODataElement iodata={iodata} />
+        <ScheduleElement schedule={schedule} />
+        <WriterElement writer={rawEventDetail.writer} />
       </div>
     </Layout>
   );
 };
 
 export async function generateStaticParams() {
-  return Object.keys(EventDetails).map((id) => ({
+  return Object.keys(eventDataMap).map((id) => ({
     id
   }));
 }
