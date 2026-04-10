@@ -2,8 +2,8 @@
 
 import Link from 'next/link'
 import type { FC } from 'react'
-import { Events, type EventType } from '../../src/components/EventList'
-import { Layout } from '../../src/components/Layout'
+import { Events, type EventType } from '@/src/components/EventList'
+import { Layout } from '@/src/components/Layout'
 
 const sectionStyle = {
   marginLeft: '8px',
@@ -30,7 +30,7 @@ const Event: FC = () => {
             </h2>
             {event.detail}
             <div style={detailStyle}>
-              <Link href={`event/${event.id}`}>詳細はこちら</Link>
+              <Link href={`/event/${event.id}`}>詳細はこちら</Link>
             </div>
           </div>
         )

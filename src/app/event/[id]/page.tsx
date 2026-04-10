@@ -1,9 +1,11 @@
 /** @format */
 
-import { useRouter } from 'next/router'
-import type { ReactNode, FC } from 'react'
-import { EventDetails, type EventDetailType } from '../../src/components/EventList'
-import { Layout } from '../../src/components/Layout'
+'use client'
+
+import { useParams } from 'next/navigation'
+import type { FC, ReactNode } from 'react'
+import { EventDetails, type EventDetailType } from '@/src/components/EventList'
+import { Layout } from '@/src/components/Layout'
 
 const defaultId = 'rupc2018'
 const getEntries: Function = (contentId: string, key: keyof EventDetailType) => {
@@ -231,8 +233,8 @@ const tdStyle = {
 }
 
 const EventDetail: FC = () => {
-  const router = useRouter()
-  const contestId = typeof router.query.id === 'string' ? router.query.id : defaultId
+  const params = useParams<{ id?: string }>()
+  const contestId = typeof params?.id === 'string' ? params.id : defaultId
 
   return (
     <Layout
