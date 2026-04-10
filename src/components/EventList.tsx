@@ -1,8 +1,8 @@
 /** @format */
-"use client";
+'use client';
 
 import type { CSSProperties, ReactNode } from 'react';
-import { eventDataMap } from '@/lib/eventData';
+import { eventDataMap } from '@/lib/generatedEventData';
 
 const tableStyle: CSSProperties = {
   borderCollapse: 'collapse',
@@ -223,13 +223,10 @@ const enrichEventData = (data: (typeof eventDataMap)[string]): EventDetailType =
   return enriched;
 };
 
-export const EventDetails: EventDetailsType = Object.entries(eventDataMap).reduce(
-  (acc, [id, data]) => {
-    acc[id] = enrichEventData(data);
-    return acc;
-  },
-  {} as EventDetailsType
-);
+export const EventDetails: EventDetailsType = Object.entries(eventDataMap).reduce((acc, [id, data]) => {
+  acc[id] = enrichEventData(data);
+  return acc;
+}, {} as EventDetailsType);
 
 export type EventType = {
   title: string;

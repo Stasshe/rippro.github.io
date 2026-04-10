@@ -14,7 +14,7 @@ type LayoutProps = {
 
 export const Layout: FC<LayoutProps> = ({ children, title, description }) => (
   <div className={styles.body}>
-    <Header title={title} description={description} />
+    <Header title={title ? title : 'RipPro'} description={description ? description : ''} />
     <div className={styles.main}>
       <Head />
       <div className={styles.article}>{children}</div>
