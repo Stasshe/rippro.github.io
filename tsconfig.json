@@ -35,6 +35,6 @@
     ".next/types/**/*.ts",
     "next.config.ts",
     ".next/dev/types/**/*.ts"
-  ],
+, "src/components/EventList.tsx.tzt"  ],
   "exclude": ["node_modules"]
 }

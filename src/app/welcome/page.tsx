@@ -46,16 +46,16 @@ const youtubeStyle: CSSProperties = {
 } as CSSProperties;
 
 const Welcome = () => {
-  const currentDate = new Date();
+  // const currentDate = new Date();
 
-  const courseDateStart = new Date(`${currentDate.getFullYear()}/5/11`);
-  const courseDateEnd = new Date(`${currentDate.getFullYear()}/7/31`);
-  const coueseWeek = ['月', '水'];
+  // const courseDateStart = new Date(`${currentDate.getFullYear()}/5/11`);
+  // const courseDateEnd = new Date(`${currentDate.getFullYear()}/7/31`);
+  // const coueseWeek = ['月', '水'];
   const workshopDate = '2025/4/7(金)';
   const coursePlace = 'OIC H234教室';
   const courseTime = '16:40〜18:15';
 
-  const isCourceOpen: boolean = courseDateStart < currentDate && currentDate < courseDateEnd;
+  // const isCourceOpen: boolean = courseDateStart < currentDate && currentDate < courseDateEnd;
   return (
     <Layout title="新歓情報 - RiPPro(立命館大学情報理工学部プロジェクト団体)" description="新歓用ページ">
       <div style={sectionStyle}>
