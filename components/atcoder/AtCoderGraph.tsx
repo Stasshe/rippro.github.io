@@ -4,7 +4,6 @@ import React from 'react'
 import styles from './AtCoderGraph.module.css'
 
 import Highcharts from 'highcharts'
-import HighchartsExporting from 'highcharts/modules/exporting'
 import HighchartsReact from 'highcharts-react-official'
 
 type Props = {}
@@ -12,6 +11,7 @@ type Props = {}
 type State = {
   userIDs: string[]
   acceptedCounts: number[]
+  loaded: boolean
 }
 
 type UserInfoType = {
@@ -24,10 +24,30 @@ class AtCoderGraph extends React.Component<{}, State> {
     super(props)
     this.state = {
       userIDs: [],
-      acceptedCounts: []
+      acceptedCounts: [],
+      loaded: false
     }
-    this.getUsersInfo()
   }
+
+  componentDidMount() {
+    import('highcharts/modules/exporting')
+      .then((module) => {
+        const HighchartsExporting: any = module.default ?? module
+        if (typeof HighchartsExporting === 'function') {
+          HighchartsExporting(Highcharts)
+        } else if (HighchartsExporting && typeof HighchartsExporting.default === 'function') {
+          HighchartsExporting.default(Highcharts)
+        } else {
+          console.warn('Highcharts exporting module did not export a function', HighchartsExporting)
+        }
+      })
+      .catch((error) => {
+        console.error('Highcharts exporting load failed', error)
+      })
+    this.getUsersInfo()
+    this.setState({ loaded: true })
+  }
+
   getUsersInfo = () => {
     const url =
       'https://script.google.com/macros/s/AKfycbxZEjsW21O2Tg4IqwHZOS8T-JpoRIbyMwBvcvFtZI92LOT6yz-PfFjVdUihBlmZxzsH/exec'
@@ -50,10 +70,8 @@ class AtCoderGraph extends React.Component<{}, State> {
         console.error('Fetch Error:', error)
       })
   }
-  RenderSummary: React.VFC = (): JSX.Element => {
-    if (typeof Highcharts === 'object') {
-      HighchartsExporting(Highcharts)
-    }
+
+  RenderSummary = () => {
     const options = {
       chart: {
         polar: true,
@@ -105,6 +123,10 @@ class AtCoderGraph extends React.Component<{}, State> {
   }
 
   render() {
+    if (!this.state.loaded) {
+      return <div className={styles.body} />
+    }
+
     return <div className={`${styles.body}`}>{<this.RenderSummary />}</div>
   }
 }

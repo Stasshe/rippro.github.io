@@ -8,10 +8,8 @@ import styles from './Head.module.css'
 const Header: VFC = () => {
   return (
     <div className={styles.head}>
-      <Link href="/">
-        <a className={styles.logo}>
-          <img src="/rippro-rogo.png" alt="rippro-rogo" />
-        </a>
+      <Link href="/" className={styles.logo}>
+        <img src="/rippro-rogo.png" alt="rippro-rogo" />
       </Link>
       <Navigator />
     </div>

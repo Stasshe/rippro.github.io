@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { type FC, type ReactNode } from 'react'
 
 import Header from './Header'
 import Footer from './Footer'
@@ -6,11 +6,14 @@ import Head from './Head'
 
 import styles from './Layout.module.css'
 
-export const Layout: FC<{
-  headerChild?: JSX.Element
+type LayoutProps = {
+  headerChild?: ReactNode
   title?: string
   description?: string
-}> = ({ children, title, description }) => (
+  children?: ReactNode
+}
+
+export const Layout: FC<LayoutProps> = ({ children, title, description }) => (
   <div className={styles.body}>
     <Header title={title} description={description} />
     <div className={styles.main}>

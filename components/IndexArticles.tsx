@@ -39,32 +39,32 @@ const IndexArticles: VFC = () => {
         <h3>立命館大学情報理工学部プロジェクト連合</h3>
         <p>
           情報理工学部では、専門性を活かした課外活動を応援すべく以下の4団体で構成されるプロジェクト連合を2016年4月に設立しました。（RiSTは2019年9月より加入）
-          <dl>
-            <dt> RiPPro </dt>
-            <dd>プログラミングコンテストを主目的とする団体です。</dd>
-            <dt>
-              <a href="http://rione.org/" target="_blank" rel="noopener noreferrer">
-                {' '}
-                Ri-one{' '}
-              </a>
-            </dt>
-            <dd>RoboCupを主目的としている団体です。</dd>
-            <dt>
-              <a href="https://rigpp.sakura.ne.jp/wp/" target="_blank" rel="noopener noreferrer">
-                {' '}
-                RiG++{' '}
-              </a>
-            </dt>
-            <dd>ゲームとCGの作成を主目的としている団体です。</dd>
-            <dt>
-              <a href="https://risec.github.io/" target="_blank" rel="noopener noreferrer">
-                {' '}
-                RiST{' '}
-              </a>
-            </dt>
-            <dd>情報セキュリティの相互学習を主目的としている団体です。</dd>
-          </dl>
         </p>
+        <dl>
+          <dt> RiPPro </dt>
+          <dd>プログラミングコンテストを主目的とする団体です。</dd>
+          <dt>
+            <a href="http://rione.org/" target="_blank" rel="noopener noreferrer">
+              {' '}
+              Ri-one{' '}
+            </a>
+          </dt>
+          <dd>RoboCupを主目的としている団体です。</dd>
+          <dt>
+            <a href="https://rigpp.sakura.ne.jp/wp/" target="_blank" rel="noopener noreferrer">
+              {' '}
+              RiG++{' '}
+            </a>
+          </dt>
+          <dd>ゲームとCGの作成を主目的としている団体です。</dd>
+          <dt>
+            <a href="https://risec.github.io/" target="_blank" rel="noopener noreferrer">
+              {' '}
+              RiST{' '}
+            </a>
+          </dt>
+          <dd>情報セキュリティの相互学習を主目的としている団体です。</dd>
+        </dl>
       </div>
     </div>
   )

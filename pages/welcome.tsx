@@ -1,6 +1,5 @@
 /** @format */
 
-import { VFC } from 'react'
 import Link from 'next/link'
 import { Layout } from '../components/Layout'
 import YouTube from 'react-youtube'
@@ -10,7 +9,7 @@ import welcomeStyles from '../styles/welcome.module.css'
 import flyer from '../public/RiPPro_Ad.png'
 import Discord from '../components/discord'
 
-const Welcome: VFC = () => {
+const Welcome = () => {
   const currentDate = new Date()
 
   const courseDateStart = new Date(`${currentDate.getFullYear()}/5/11`)
@@ -87,8 +86,8 @@ const Welcome: VFC = () => {
             このようなことを考えることはパズルを解くのと同じようにとても楽しいですし、実際のプログラム開発でも役に立ちます。
           </p>
         </div>
-        <div style={{ width: '95%', margin: 'auto' }}>
-          <YouTube videoId="Q4gTV4r0zRs" className={welcomeStyles.iframe} containerClassName={welcomeStyles.youtube} />
+        <div className={welcomeStyles.youtube}>
+          <YouTube videoId="Q4gTV4r0zRs" opts={{ width: '100%', height: '100%' }} />
         </div>
         <div className={welcomeStyles.line}>
           <p>RiPProの普段の活動ではコンテスト形式でサークル内で競いながら問題を解いていきます。</p>

@@ -1,11 +1,10 @@
 /** @format */
 
-import { VFC } from 'react'
 import { Layout } from '../components/Layout'
 import AtCoderGraph from '../components/atcoder/AtCoderGraph'
 import styles from '../styles/section.module.css'
 
-const AtCoderPage: VFC = () => {
+const AtCoderPage = () => {
   return (
     <Layout title="部員向けページ - RiPPro(立命館大学情報理工学部プロジェクト団体)" description="部員向けページ">
       <div className={styles.section}>

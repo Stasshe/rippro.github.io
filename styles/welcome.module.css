@@ -34,9 +34,8 @@
   position: relative;
   padding-right: 2%;
 }
-.workshop {
-  position: absolute;
-}
+/* .workshop {
+} */
 .p {
   float: right;
   font-size: small;
