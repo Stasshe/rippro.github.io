@@ -38,5 +38,5 @@ yarn-error.log*
 tsconfig.tsbuildinfo
 
 
-public/data/**/*.json
+public/data
 src/lib/generatedEventData.ts

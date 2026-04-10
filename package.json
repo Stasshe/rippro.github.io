@@ -2,7 +2,6 @@
   "name": "rippro.github.io",
   "private": true,
   "scripts": {
-    "prebuild": "node scripts/copyEventData.js",
     "build": "next build",
     "dev": "next dev",
     "export": "next export",
