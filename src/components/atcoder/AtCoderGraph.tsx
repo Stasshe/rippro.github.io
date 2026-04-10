@@ -3,7 +3,6 @@
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import React from 'react';
-import styles from './AtCoderGraph.module.css';
 
 type Props = {};
 
@@ -124,10 +123,10 @@ class AtCoderGraph extends React.Component<{}, State> {
 
   render() {
     if (!this.state.loaded) {
-      return <div className={styles.body} />;
+      return <div className="mx-10" />;
     }
 
-    return <div className={`${styles.body}`}>{<this.RenderSummary />}</div>;
+    return <div className="mx-10">{<this.RenderSummary />}</div>;
   }
 }
 
