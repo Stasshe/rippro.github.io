@@ -29,9 +29,16 @@ class AtCoderGraph extends React.Component<{}, State> {
   }
 
   componentDidMount() {
-    import('highcharts/modules/exporting').then((module: any) => {
-      (module.default ?? module)(Highcharts);
-    });
+    import('highcharts/modules/exporting')
+      .then((module: any) => {
+        const HighchartsExporting = module.default ?? module;
+        if (typeof HighchartsExporting === 'function') {
+          HighchartsExporting(Highcharts);
+        }
+      })
+      .catch(() => {
+        // Silently ignore exporting module loading failures
+      });
     this.getUsersInfo();
     this.setState({ loaded: true });
   }
