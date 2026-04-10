@@ -1,11 +1,6 @@
+import Link from 'next/link';
 import { getAllEventsFromMdx, getEventById } from '@/lib/eventMdx';
 import { Layout } from '../../../components/PageLayout';
-
-const sectionStyle = {
-  marginLeft: '8px',
-  padding: '2px',
-  fontSize: '11pt'
-};
 
 type PageProps = {
   params: Promise<{
@@ -20,7 +15,10 @@ const EventDetailPage = async ({ params }: PageProps) => {
   if (!event) {
     return (
       <Layout title="イベントが見つかりません - RiPPro(立命館大学情報理工学部プロジェクト団体)">
-        <div style={sectionStyle}>
+        <div className="event-page">
+          <Link href="/event" className="event-back-link">
+            解説ページに戻る
+          </Link>
           <h2>イベントが見つかりません</h2>
         </div>
       </Layout>
@@ -34,10 +32,13 @@ const EventDetailPage = async ({ params }: PageProps) => {
       title={`${event.title} - RiPPro(立命館大学情報理工学部プロジェクト団体)`}
       description="過去に開催したイベント詳細ページ"
     >
-      <div style={sectionStyle}>
+      <div className="event-page">
+        <Link href="/event" className="event-back-link">
+          解説ページに戻る
+        </Link>
         <h2>{event.title}</h2>
-        <p>{dateText}</p>
-        <div dangerouslySetInnerHTML={{ __html: event.contentHtml }} />
+        <p className="event-meta">{dateText}</p>
+        <article className="event-content" dangerouslySetInnerHTML={{ __html: event.contentHtml }} />
       </div>
     </Layout>
   );

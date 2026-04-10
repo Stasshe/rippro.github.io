@@ -26,6 +26,17 @@ export type EventSummary = {
   detail: string;
 };
 
+function dateToTimestamp(dateText: string): number {
+  const parts = dateText.split('/').map((part) => Number(part));
+
+  if (parts.length !== 3 || parts.some((part) => Number.isNaN(part))) {
+    return 0;
+  }
+
+  const [year, month, day] = parts;
+  return Date.UTC(year, month - 1, day);
+}
+
 function resolveEventAssetPath(contestId: string, assetPath: string): string {
   if (!assetPath || assetPath.startsWith('http') || assetPath.startsWith('/') || assetPath.startsWith('data:')) {
     return assetPath;
@@ -93,14 +104,16 @@ export function getEventById(id: string): EventMdxData | null {
 }
 
 export function getEventSummaries(): EventSummary[] {
-  return getAllEventsFromMdx().map((event) => {
-    const date = event.date.begin && event.date.end ? `${event.date.begin} - ${event.date.end}` : event.date.begin;
-    const detail = `${date} に開催されたイベントです．`;
+  return getAllEventsFromMdx()
+    .sort((a, b) => dateToTimestamp(b.date.begin) - dateToTimestamp(a.date.begin))
+    .map((event) => {
+      const date = event.date.begin && event.date.end ? `${event.date.begin} - ${event.date.end}` : event.date.begin;
+      const detail = `${date} に開催されたイベントです．`;
 
-    return {
-      id: event.id,
-      title: event.title,
-      detail
-    };
-  });
+      return {
+        id: event.id,
+        title: event.title,
+        detail
+      };
+    });
 }
