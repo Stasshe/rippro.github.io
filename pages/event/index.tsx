@@ -4,8 +4,17 @@ import Link from 'next/link'
 import type { FC } from 'react'
 import { Events, type EventType } from '../../components/EventList'
 import { Layout } from '../../components/Layout'
-import eventStyles from '../../styles/event.module.css'
-import styles from '../../styles/section.module.css'
+
+const sectionStyle = {
+  marginLeft: '8px',
+  padding: '2px',
+  fontSize: '11pt'
+}
+
+const detailStyle = {
+  textAlign: 'right' as const,
+  margin: '8px 16px'
+}
 
 const Event: FC = () => {
   return (
@@ -15,12 +24,12 @@ const Event: FC = () => {
     >
       {Events.map((event: EventType) => {
         return (
-          <div className={styles.section} key={event.title}>
+          <div style={sectionStyle} key={event.title}>
             <h2>
               {event.title} {event.date ? event.date + ' ' : ''}解説
             </h2>
             {event.detail}
-            <div className={eventStyles.detail}>
+            <div style={detailStyle}>
               <Link href={`event/${event.id}`}>詳細はこちら</Link>
             </div>
           </div>

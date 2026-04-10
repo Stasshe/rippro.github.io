@@ -3,11 +3,15 @@
 import type { FC } from 'react'
 import { Timeline } from 'react-twitter-widgets'
 
-import styles from '../styles/section.module.css'
+const sectionStyle = {
+  marginLeft: '8px',
+  padding: '2px',
+  fontSize: '11pt'
+}
 
 const Header: FC = () => {
   return (
-    <div className={styles.section}>
+    <div style={sectionStyle}>
       <h2>Twitter</h2>
       Tweets by{' '}
       <a href="https://twitter.com/PJ_RiPPro" target="_blank" rel="noopener noreferrer">

@@ -4,8 +4,6 @@ import { useRouter } from 'next/router'
 import type { ReactNode, FC } from 'react'
 import { EventDetails, type EventDetailType } from '../../components/EventList'
 import { Layout } from '../../components/Layout'
-import detailsStyle from '../../styles/details.module.css'
-import styles from '../../styles/section.module.css'
 
 const defaultId = 'rupc2018'
 const getEntries: Function = (contentId: string, key: keyof EventDetailType) => {
@@ -171,16 +169,16 @@ const CommentaryElement: FC<CommentaryProps> = (Props: CommentaryProps) => {
   return (
     <>
       <h3>{Props.day + ' ' || ''}解説</h3>
-      <table className={detailsStyle.table}>
-        <tr className={detailsStyle.tr}>
-          <td className={detailsStyle.td}>問題</td>
-          <td className={detailsStyle.td}>解説</td>
+      <table style={tableStyle}>
+        <tr style={trStyle}>
+          <td style={tdStyle}>問題</td>
+          <td style={tdStyle}>解説</td>
         </tr>
         {Props.commentary.map((commentary) => {
           return (
-            <tr className={detailsStyle.tr} key={commentary.title}>
-              <td className={detailsStyle.td}>{commentary.title}</td>
-              <td className={detailsStyle.td}>
+            <tr style={trStyle} key={commentary.title}>
+              <td style={tdStyle}>{commentary.title}</td>
+              <td style={tdStyle}>
                 <a href={`/static/contestData/${Props.contestId}/${commentary.link}`}>{extension(commentary.link)}</a>
               </td>
             </tr>
@@ -212,6 +210,26 @@ const ProblemSetElement: FC<ProblemSetProps> = (Props: ProblemSetProps) => {
   )
 }
 
+const sectionStyle = {
+  marginLeft: '8px',
+  padding: '2px',
+  fontSize: '11pt'
+}
+
+const tableStyle = {
+  borderCollapse: 'collapse' as const,
+  width: '100%'
+}
+
+const trStyle = {
+  border: '1px solid black'
+}
+
+const tdStyle = {
+  border: '1px solid black',
+  padding: '8px'
+}
+
 const EventDetail: FC = () => {
   const router = useRouter()
   const contestId = typeof router.query.id === 'string' ? router.query.id : defaultId
@@ -221,7 +239,7 @@ const EventDetail: FC = () => {
       title={`${getEntries(contestId, 'title')} - RiPPro(立命館大学情報理工学部プロジェクト団体)`}
       description="過去に開催したイベント一覧ページ"
     >
-      <div className={styles.section}>
+      <div style={sectionStyle}>
         <h2>{getEntries(contestId, 'title')}</h2>
         <PictureElement contestId={contestId || defaultId} link={getEntries(contestId, 'picture')} />
         <EventDateElement date={getEntries(contestId, 'date')} />

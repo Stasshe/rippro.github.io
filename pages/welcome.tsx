@@ -5,8 +5,46 @@ import YouTube from 'react-youtube'
 import Discord from '../components/discord'
 import { Layout } from '../components/Layout'
 import flyer from '../public/RiPPro_Ad.png'
-import styles from '../styles/section.module.css'
-import welcomeStyles from '../styles/welcome.module.css'
+import type { CSSProperties } from 'react'
+
+const sectionStyle: CSSProperties = {
+  marginLeft: '8px',
+  padding: '2px',
+  fontSize: '11pt'
+}
+
+const lineParagraphStyle = {
+  margin: 0
+}
+
+const listStyle = {
+  listStyle: 'none',
+  display: 'block',
+  paddingLeft: 0
+}
+
+const bottomStyle: CSSProperties = {
+  marginBottom: '1em'
+}
+
+const flyerStyle: CSSProperties = {
+  justifyContent: 'flex-end',
+  display: 'flex',
+  position: 'relative',
+  paddingRight: '2%'
+}
+
+const pStyle: CSSProperties = {
+  float: 'right',
+  fontSize: 'small',
+  paddingRight: '2%'
+}
+
+const youtubeStyle: CSSProperties = {
+  position: 'relative',
+  width: '100%',
+  paddingTop: '56.25%'
+}
 
 const Welcome = () => {
   const currentDate = new Date()
@@ -21,76 +59,84 @@ const Welcome = () => {
   const isCourceOpen: boolean = courseDateStart < currentDate && currentDate < courseDateEnd
   return (
     <Layout title="新歓情報 - RiPPro(立命館大学情報理工学部プロジェクト団体)" description="新歓用ページ">
-      <div className={`${styles.section} ${welcomeStyles.line}`}>
+      <div style={sectionStyle}>
         <h2>新歓Discordサーバー</h2>
         <Discord />
         <h2>新歓講演会</h2>
-        <div className={welcomeStyles.workshop}>
+        <div>
           <p>私たちRiPRroの普段の活動内容や配布したビラの問題の解説などを行います！</p>
           <p>どこの学部の方でもでも歓迎するので気軽に参加してください。</p>
-          <ul className={welcomeStyles.list}>
+          <ul style={listStyle}>
             <li>日程 : {workshopDate}</li>
             <li>場所 : {coursePlace}</li>
             <li>時間 : {courseTime}</li>
           </ul>
         </div>
-        <a href={flyer.src} className={welcomeStyles.flyer} target="_blank" rel="noreferrer">
+        <a href={flyer.src} style={flyerStyle} target="_blank" rel="noreferrer">
           <img src={flyer.src} width="20%" alt="" />
         </a>
-        <p className={welcomeStyles.p}>クリックで拡大画像を表示</p>
+        <p style={pStyle}>クリックで拡大画像を表示</p>
         <h2>競プロ新歓講習</h2>
         <p>仮入部者に向けてプログラムの書き方や、そのプログラムをどうやって競プロに使うのかをゼロから講習します！</p>
         <p>各回につき2日の日程が用意されていますが、同じ内容をやるのでどちらに参加していただいても大丈夫です!</p>
         <h3>第1回講習 入門！プログラミング勉強会 #1</h3>
-        <ul className={welcomeStyles.list}>
+        <ul style={listStyle}>
           <li>日程 : 4/22(月) 4/23(火) </li>
           <li>場所 : 更新予定</li>
           <li>時間 : 16:20~17:50</li>
         </ul>
         <h3>第2回講習 実践！競プロ勉強会 #1</h3>
-        <ul className={welcomeStyles.list}>
+        <ul style={listStyle}>
           <li>日程 :4/24(水) 4/25(木) </li>
           <li>場所 : 更新予定</li>
           <li>時間 : 16:20~17:50</li>
         </ul>
         <h3>第3回講習 入門！プログラミング勉強会 #2</h3>
-        <ul className={welcomeStyles.list}>
+        <ul style={listStyle}>
           <li>日程 :4/29(月) 4/30(火)</li>
           <li>場所 : 更新予定</li>
           <li>時間 : 16:20~17:50</li>
         </ul>
         <h3>第4回講習 実践！競プロ勉強会 #2</h3>
-        <ul className={welcomeStyles.list}>
+        <ul style={listStyle}>
           <li>日程 :5/1(水) 5/2(木)</li>
           <li>場所 : 更新予定</li>
           <li>時間 : 16:20~17:50</li>
         </ul>
         <h2>RiPProとは</h2>
-        <div className={welcomeStyles.line}>
-          <p>私たち RiPProは競技プログラミングの能力を高めコンテストでの入賞を目指す団体です。</p>
-          <p>競技プログラミングって聞いたことありますか？</p>
-          <p>競技プログラミングとは、与えられた問題をプログラムを用いて早く正確に解く種目です。</p>
-          <p>世界規模での大会が開催されるなどとても活発です。</p>
+        <div>
+          <p style={lineParagraphStyle}>
+            私たち RiPProは競技プログラミングの能力を高めコンテストでの入賞を目指す団体です。
+          </p>
+          <p style={lineParagraphStyle}>競技プログラミングって聞いたことありますか？</p>
+          <p style={lineParagraphStyle}>
+            競技プログラミングとは、与えられた問題をプログラムを用いて早く正確に解く種目です。
+          </p>
+          <p style={lineParagraphStyle}>世界規模での大会が開催されるなどとても活発です。</p>
           <a href="http://atcoder.jp/" target="_blank" rel="noopener noreferrer">
             AtCoder
           </a>{' '}
           などでは初心者から熟練者まで幅広く参加できるコンテストが毎週開催されています。
         </div>
         <h2>パソコンに問題を解かせよう!</h2>
-        <div className={welcomeStyles.line}>
-          <p>良いプログラムとはどういうものでしょうか？</p>
-          <p>例えばこの動画のお姉さんは一つ一つ必死に数えていますが、もっと効率よく数える方法は無いでしょうか。</p>
-          <p>また、その方法をどうやってプログラムに落とし込みますか？</p>
-          <p>
+        <div>
+          <p style={lineParagraphStyle}>良いプログラムとはどういうものでしょうか？</p>
+          <p style={lineParagraphStyle}>
+            例えばこの動画のお姉さんは一つ一つ必死に数えていますが、もっと効率よく数える方法は無いでしょうか。
+          </p>
+          <p style={lineParagraphStyle}>また、その方法をどうやってプログラムに落とし込みますか？</p>
+          <p style={lineParagraphStyle}>
             このようなことを考えることはパズルを解くのと同じようにとても楽しいですし、実際のプログラム開発でも役に立ちます。
           </p>
         </div>
-        <div className={welcomeStyles.youtube}>
+        <div style={youtubeStyle}>
           <YouTube videoId="Q4gTV4r0zRs" opts={{ width: '100%', height: '100%' }} />
         </div>
-        <div className={welcomeStyles.line}>
-          <p>RiPProの普段の活動ではコンテスト形式でサークル内で競いながら問題を解いていきます。</p>
-          <p>
+        <div>
+          <p style={lineParagraphStyle}>
+            RiPProの普段の活動ではコンテスト形式でサークル内で競いながら問題を解いていきます。
+          </p>
+          <p style={lineParagraphStyle}>
             年に 1~2 回ほどですが、問題を作ったりもしています。 (例:
             <a
               href="https://onlinejudge.u-aizu.ac.jp/beta/room.html#RitsCamp16Day1"
@@ -109,13 +155,13 @@ const Welcome = () => {
             </a>
             )
           </p>
-          <p>
+          <p style={lineParagraphStyle}>
             プログラミングの勉強をしたい方、クイズやパズルが好きな方、是非部室に来てください
             <b>情報理工学部生以外も大歓迎です</b>
           </p>
         </div>
         <h2>連絡先</h2>
-        <div className={welcomeStyles.bottom}>
+        <div style={bottomStyle}>
           入部希望者または質問等がある方は，
           <Link href="/contact">お問い合わせ</Link>にアクセスしてください。
         </div>

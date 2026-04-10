@@ -3,20 +3,25 @@
 import Link from 'next/link'
 import type { FC } from 'react'
 
-import styles from '../styles/section.module.css'
 import articleStyles from './IndexArticles.module.css'
+
+const sectionStyle = {
+  marginLeft: '8px',
+  padding: '2px',
+  fontSize: '11pt'
+}
 
 const IndexArticles: FC = () => {
   return (
     <div className={articleStyles.article}>
-      <div className={styles.section}>
+      <div style={sectionStyle}>
         <h2>入部希望の方へ</h2>
         新入生のみなさん、ご入学おめでとうございます!
         <br />
         新入生に限らず、RiPPro に興味がある方は <Link href="/welcome">新歓情報ページ</Link> をご覧ください。
         <br />
       </div>
-      <div className={styles.section}>
+      <div style={sectionStyle}>
         <h2>ようこそ RiPPro へ</h2>
         <p>
           立命館大学情報理工学部プロジェクト団体 RiPPro (<b>Ri</b>tsumeikan <b>P</b>rogramming <b>Pro</b>ject)

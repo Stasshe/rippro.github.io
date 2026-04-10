@@ -4,7 +4,11 @@ import type { FC } from 'react'
 import { Layout } from '../components/Layout'
 import { type LinksType, type SectionType, sections } from '../components/Links'
 
-import styles from '../styles/section.module.css'
+const sectionStyle = {
+  marginLeft: '8px',
+  padding: '2px',
+  fontSize: '11pt'
+}
 
 const LinkSection: FC<SectionType> = (Props: SectionType) => {
   return (
@@ -31,7 +35,7 @@ const Links: FC = () => {
       title="リンク - RiPPro(立命館大学情報理工学部プロジェクト団体)"
       description="他サイトへのリンクを記載したページ"
     >
-      <div className={styles.section}>
+      <div style={sectionStyle}>
         <h2>リンク</h2>
         {sections.map((section: SectionType) => {
           return <LinkSection {...section} key={section.title} />

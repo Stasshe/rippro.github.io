@@ -1,5 +1,9 @@
 import React, { useEffect } from 'react'
-import styles from '../styles/discord.module.css'
+
+const discordWrapperStyle = {
+  display: 'flex',
+  justifyContent: 'center'
+}
 
 function Discord() {
   useEffect(() => {
@@ -11,7 +15,7 @@ function Discord() {
     }
   }, [])
   return (
-    <div className={styles.discordWrapper}>
+    <div style={discordWrapperStyle}>
       <blockquote className="twitter-tweet">
         <p lang="ja" dir="ltr">
           RiPProの新歓用Discordサーバー公開します！ 講演会や入団に興味のある方は、自由に参加できます。

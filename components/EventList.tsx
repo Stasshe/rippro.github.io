@@ -1,6 +1,24 @@
 /** @format */
-import type { ReactNode } from 'react'
-import detailsStyle from '../styles/details.module.css'
+import type { ReactNode, CSSProperties } from 'react'
+const tableStyle: CSSProperties = {
+  borderCollapse: 'collapse',
+  width: '100%'
+}
+
+const trStyle: CSSProperties = {
+  border: '1px solid black'
+}
+
+const tdStyle: CSSProperties = {
+  border: '1px solid black',
+  padding: '8px'
+}
+
+const thStyle: CSSProperties = {
+  border: '1px solid black',
+  padding: '8px',
+  fontWeight: 'bold'
+}
 
 type problemSetType = {
   college: string
@@ -389,71 +407,71 @@ export const EventDetails: EventDetailsType = {
     judge: 'http://judge.u-aizu.ac.jp/onlinejudge/index.jsp',
     place: '立命館大学 BKC',
     schedule: (
-      <table className={detailsStyle.table}>
+      <table style={tableStyle}>
         <thead>
-          <tr className={detailsStyle.tr}>
-            <th className={detailsStyle.th}>Day</th>
-            <th className={detailsStyle.th}>Time</th>
-            <th className={detailsStyle.th}></th>
+          <tr style={trStyle}>
+            <th style={thStyle}>Day</th>
+            <th style={thStyle}>Time</th>
+            <th style={thStyle}></th>
           </tr>
         </thead>
         <tbody>
-          <tr className={detailsStyle.tr}>
-            <th className={detailsStyle.th} rowSpan={5}>
+          <tr style={trStyle}>
+            <th style={thStyle} rowSpan={5}>
               Day 1
             </th>
-            <td className={detailsStyle.td}>13:00 - 14:00</td>
-            <td className={detailsStyle.td}>集合，開会，自己紹介など</td>
+            <td style={tdStyle}>13:00 - 14:00</td>
+            <td style={tdStyle}>集合，開会，自己紹介など</td>
           </tr>
-          <tr className={detailsStyle.tr}>
-            <td className={detailsStyle.td}>14:00 - 14:30</td>
-            <td className={detailsStyle.td}>チーム編成</td>
+          <tr style={trStyle}>
+            <td style={tdStyle}>14:00 - 14:30</td>
+            <td style={tdStyle}>チーム編成</td>
           </tr>
-          <tr className={detailsStyle.tr}>
-            <td className={detailsStyle.td}>14:30 - 17:30</td>
-            <td className={detailsStyle.td}>模擬コンテスト1 (3時間セット)</td>
+          <tr style={trStyle}>
+            <td style={tdStyle}>14:30 - 17:30</td>
+            <td style={tdStyle}>模擬コンテスト1 (3時間セット)</td>
           </tr>
-          <tr className={detailsStyle.tr}>
-            <td className={detailsStyle.td}>17:30 - 18:30</td>
-            <td className={detailsStyle.td}>問題解説</td>
+          <tr style={trStyle}>
+            <td style={tdStyle}>17:30 - 18:30</td>
+            <td style={tdStyle}>問題解説</td>
           </tr>
-          <tr className={detailsStyle.tr}>
-            <td className={detailsStyle.td}>19:00 -</td>
-            <td className={detailsStyle.td}>懇親会</td>
+          <tr style={trStyle}>
+            <td style={tdStyle}>19:00 -</td>
+            <td style={tdStyle}>懇親会</td>
           </tr>
-          <tr className={detailsStyle.tr}>
-            <th className={detailsStyle.th} rowSpan={4}>
+          <tr style={trStyle}>
+            <th style={thStyle} rowSpan={4}>
               Day 2
             </th>
-            <td className={detailsStyle.td}>10:00 - 11:00</td>
-            <td className={detailsStyle.td}>集合・チーム編成</td>
+            <td style={tdStyle}>10:00 - 11:00</td>
+            <td style={tdStyle}>集合・チーム編成</td>
           </tr>
-          <tr className={detailsStyle.tr}>
-            <td className={detailsStyle.td}>11:00 - 16:00</td>
-            <td className={detailsStyle.td}>模擬コンテスト2 (5時間セット)</td>
+          <tr style={trStyle}>
+            <td style={tdStyle}>11:00 - 16:00</td>
+            <td style={tdStyle}>模擬コンテスト2 (5時間セット)</td>
           </tr>
-          <tr className={detailsStyle.tr}>
-            <td className={detailsStyle.td}>16:00 - 17:00</td>
-            <td className={detailsStyle.td}>問題解説</td>
+          <tr style={trStyle}>
+            <td style={tdStyle}>16:00 - 17:00</td>
+            <td style={tdStyle}>問題解説</td>
           </tr>
-          <tr className={detailsStyle.tr}>
-            <td className={detailsStyle.td}>19:00 -</td>
-            <td className={detailsStyle.td}>懇親会</td>
+          <tr style={trStyle}>
+            <td style={tdStyle}>19:00 -</td>
+            <td style={tdStyle}>懇親会</td>
           </tr>
-          <tr className={detailsStyle.tr}>
-            <th className={detailsStyle.th} rowSpan={3}>
+          <tr style={trStyle}>
+            <th style={thStyle} rowSpan={3}>
               Day 3
             </th>
-            <td className={detailsStyle.td}>09:00 - 10:00</td>
-            <td className={detailsStyle.td}>集合・チーム編成</td>
+            <td style={tdStyle}>09:00 - 10:00</td>
+            <td style={tdStyle}>集合・チーム編成</td>
           </tr>
-          <tr className={detailsStyle.tr}>
-            <td className={detailsStyle.td}>10:00 - 13:00</td>
-            <td className={detailsStyle.td}>模擬コンテスト3 (3時間セット)</td>
+          <tr style={trStyle}>
+            <td style={tdStyle}>10:00 - 13:00</td>
+            <td style={tdStyle}>模擬コンテスト3 (3時間セット)</td>
           </tr>
-          <tr className={detailsStyle.tr}>
-            <td className={detailsStyle.td}>13:00 -</td>
-            <td className={detailsStyle.td}>問題解説</td>
+          <tr style={trStyle}>
+            <td style={tdStyle}>13:00 -</td>
+            <td style={tdStyle}>問題解説</td>
           </tr>
         </tbody>
       </table>
@@ -492,67 +510,67 @@ export const EventDetails: EventDetailsType = {
     judge: 'http://judge.u-aizu.ac.jp/onlinejudge/index.jsp',
     place: '立命館大学 BKC',
     schedule: (
-      <table className={detailsStyle.table}>
+      <table style={tableStyle}>
         <thead>
-          <tr className={detailsStyle.tr}>
-            <th className={detailsStyle.th}>Day</th>
-            <th className={detailsStyle.th}>Time</th>
-            <th className={detailsStyle.th}></th>
+          <tr style={trStyle}>
+            <th style={thStyle}>Day</th>
+            <th style={thStyle}>Time</th>
+            <th style={thStyle}></th>
           </tr>
         </thead>
         <tbody>
-          <tr className={detailsStyle.tr}>
-            <th className={detailsStyle.th} rowSpan={5}>
+          <tr style={trStyle}>
+            <th style={thStyle} rowSpan={5}>
               Day 1
             </th>
-            <td className={detailsStyle.td}>13:00 - 14:00</td>
-            <td className={detailsStyle.td}>集合，開会，自己紹介など</td>
+            <td style={tdStyle}>13:00 - 14:00</td>
+            <td style={tdStyle}>集合，開会，自己紹介など</td>
           </tr>
-          <tr className={detailsStyle.tr}>
-            <td className={detailsStyle.td}>14:00 - 14:30</td>
-            <td className={detailsStyle.td}>チーム編成</td>
+          <tr style={trStyle}>
+            <td style={tdStyle}>14:00 - 14:30</td>
+            <td style={tdStyle}>チーム編成</td>
           </tr>
-          <tr className={detailsStyle.tr}>
-            <td className={detailsStyle.td}>14:30 - 17:30</td>
-            <td className={detailsStyle.td}>模擬コンテスト1 (3時間セット)</td>
+          <tr style={trStyle}>
+            <td style={tdStyle}>14:30 - 17:30</td>
+            <td style={tdStyle}>模擬コンテスト1 (3時間セット)</td>
           </tr>
-          <tr className={detailsStyle.tr}>
-            <td className={detailsStyle.td}>17:30 - 18:30</td>
-            <td className={detailsStyle.td}>問題解説</td>
+          <tr style={trStyle}>
+            <td style={tdStyle}>17:30 - 18:30</td>
+            <td style={tdStyle}>問題解説</td>
           </tr>
-          <tr className={detailsStyle.tr}>
-            <td className={detailsStyle.td}>19:00 -</td>
-            <td className={detailsStyle.td}>懇親会</td>
+          <tr style={trStyle}>
+            <td style={tdStyle}>19:00 -</td>
+            <td style={tdStyle}>懇親会</td>
           </tr>
-          <tr className={detailsStyle.tr}>
-            <th className={detailsStyle.th} rowSpan={3}>
+          <tr style={trStyle}>
+            <th style={thStyle} rowSpan={3}>
               Day 2
             </th>
-            <td className={detailsStyle.td}>10:00 - 11:00</td>
-            <td className={detailsStyle.td}>集合・チーム編成</td>
+            <td style={tdStyle}>10:00 - 11:00</td>
+            <td style={tdStyle}>集合・チーム編成</td>
           </tr>
-          <tr className={detailsStyle.tr}>
-            <td className={detailsStyle.td}>11:00 - 16:00</td>
-            <td className={detailsStyle.td}>模擬コンテスト2 (5時間セット)</td>
+          <tr style={trStyle}>
+            <td style={tdStyle}>11:00 - 16:00</td>
+            <td style={tdStyle}>模擬コンテスト2 (5時間セット)</td>
           </tr>
-          <tr className={detailsStyle.tr}>
-            <td className={detailsStyle.td}>16:00 - 17:00</td>
-            <td className={detailsStyle.td}>問題解説</td>
+          <tr style={trStyle}>
+            <td style={tdStyle}>16:00 - 17:00</td>
+            <td style={tdStyle}>問題解説</td>
           </tr>
-          <tr className={detailsStyle.tr}>
-            <th className={detailsStyle.th} rowSpan={3}>
+          <tr style={trStyle}>
+            <th style={thStyle} rowSpan={3}>
               Day 3
             </th>
-            <td className={detailsStyle.td}>09:00 - 10:00</td>
-            <td className={detailsStyle.td}>集合・チーム編成</td>
+            <td style={tdStyle}>09:00 - 10:00</td>
+            <td style={tdStyle}>集合・チーム編成</td>
           </tr>
-          <tr className={detailsStyle.tr}>
-            <td className={detailsStyle.td}>10:00 - 13:00</td>
-            <td className={detailsStyle.td}>模擬コンテスト3 (3時間セット)</td>
+          <tr style={trStyle}>
+            <td style={tdStyle}>10:00 - 13:00</td>
+            <td style={tdStyle}>模擬コンテスト3 (3時間セット)</td>
           </tr>
-          <tr className={detailsStyle.tr}>
-            <td className={detailsStyle.td}>14:00 - 15:00</td>
-            <td className={detailsStyle.td}>問題解説</td>
+          <tr style={trStyle}>
+            <td style={tdStyle}>14:00 - 15:00</td>
+            <td style={tdStyle}>問題解説</td>
           </tr>
         </tbody>
       </table>
