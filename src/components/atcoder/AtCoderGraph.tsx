@@ -29,20 +29,9 @@ class AtCoderGraph extends React.Component<{}, State> {
   }
 
   componentDidMount() {
-    import('highcharts/modules/exporting')
-      .then((module) => {
-        const HighchartsExporting: any = module.default ?? module;
-        if (typeof HighchartsExporting === 'function') {
-          HighchartsExporting(Highcharts);
-        } else if (HighchartsExporting && typeof HighchartsExporting.default === 'function') {
-          HighchartsExporting.default(Highcharts);
-        } else {
-          console.warn('Highcharts exporting module did not export a function', HighchartsExporting);
-        }
-      })
-      .catch((error) => {
-        console.error('Highcharts exporting load failed', error);
-      });
+    import('highcharts/modules/exporting').then((module: any) => {
+      (module.default ?? module)(Highcharts);
+    });
     this.getUsersInfo();
     this.setState({ loaded: true });
   }
@@ -75,6 +64,9 @@ class AtCoderGraph extends React.Component<{}, State> {
 
   RenderSummary = () => {
     const options = {
+      accessibility: {
+        enabled: false
+      },
       chart: {
         type: 'bar',
         height: '100%'
