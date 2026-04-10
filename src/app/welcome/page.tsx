@@ -5,7 +5,6 @@ import Link from 'next/link';
 import YouTube from 'react-youtube';
 import Discord from '../../components/discord';
 import { Layout } from '../../components/Layout';
-import flyer from '../public/RiPPro_Ad.png';
 import type { CSSProperties } from 'react';
 
 const sectionStyle: CSSProperties = {
@@ -73,8 +72,8 @@ const Welcome = () => {
             <li>時間 : {courseTime}</li>
           </ul>
         </div>
-        <a href={flyer.src} style={flyerStyle} target="_blank" rel="noreferrer">
-          <img src={flyer.src} width="20%" alt="" />
+        <a href="RiPPro_Ad.png" style={flyerStyle} target="_blank" rel="noreferrer">
+          <img src="RiPPro_Ad.png" width="20%" alt="" />
         </a>
         <p style={pStyle}>クリックで拡大画像を表示</p>
         <h2>競プロ新歓講習</h2>

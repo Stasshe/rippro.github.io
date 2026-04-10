@@ -1,4 +1,4 @@
-/** @format */
+'use client';
 
 import type { FC } from 'react';
 import { Layout } from '../../components/Layout';

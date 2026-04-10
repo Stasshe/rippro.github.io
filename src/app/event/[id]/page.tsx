@@ -157,20 +157,24 @@ const CommentaryElement: FC<CommentaryProps> = (Props: CommentaryProps) => {
     <>
       <h3>{Props.day + ' ' || ''}解説</h3>
       <table style={tableStyle}>
-        <tr style={trStyle}>
-          <td style={tdStyle}>問題</td>
-          <td style={tdStyle}>解説</td>
-        </tr>
-        {Props.commentary.map((commentary) => {
-          return (
-            <tr style={trStyle} key={commentary.title}>
-              <td style={tdStyle}>{commentary.title}</td>
-              <td style={tdStyle}>
-                <a href={`/static/contestData/${Props.contestId}/${commentary.link}`}>{extension(commentary.link)}</a>
-              </td>
-            </tr>
-          );
-        })}
+        <thead>
+          <tr style={trStyle}>
+            <td style={tdStyle}>問題</td>
+            <td style={tdStyle}>解説</td>
+          </tr>
+        </thead>
+        <tbody>
+          {Props.commentary.map((commentary) => {
+            return (
+              <tr style={trStyle} key={commentary.title}>
+                <td style={tdStyle}>{commentary.title}</td>
+                <td style={tdStyle}>
+                  <a href={`/static/contestData/${Props.contestId}/${commentary.link}`}>{extension(commentary.link)}</a>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
     </>
   );
@@ -220,7 +224,17 @@ const tdStyle = {
 const EventDetail: FC = () => {
   const params = useParams<{ id?: string }>();
   const contestId = typeof params?.id === 'string' ? params.id : defaultId;
-  const eventDetail = EventDetails[contestId] ?? EventDetails[defaultId];
+  const eventDetail: EventDetailType | undefined = EventDetails[contestId] ?? EventDetails[defaultId];
+
+  if (!eventDetail) {
+    return (
+      <Layout title="イベントが見つかりません - RiPPro(立命館大学情報理工学部プロジェクト団体)">
+        <div style={sectionStyle}>
+          <h2>イベントが見つかりません</h2>
+        </div>
+      </Layout>
+    );
+  }
 
   return (
     <Layout
