@@ -5,7 +5,7 @@ import matter from 'gray-matter';
 import { marked } from 'marked';
 import path from 'path';
 
-const EVENTS_DIR = path.join(process.cwd(), 'data', 'events-mdx');
+const EVENTS_DIR = path.join(process.cwd(), 'data', 'events');
 
 type EventDate = {
   begin: string;
