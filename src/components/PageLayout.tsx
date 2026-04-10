@@ -1,5 +1,3 @@
-import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
 import NextHead from 'next/head';
 import Link from 'next/link';
 import type { FC, ReactNode } from 'react';
@@ -13,6 +11,15 @@ type PageLayoutProps = {
 const defaultDescription =
   '立命館大学情報理工学部プロジェクト団体 競技プログラミング部門「RiPPro」です。ACM-ICPC (プログラミングの学生世界大会) などの大会で入賞することを目的として活動しています。';
 const defaultTitle = 'RiPPro - 立命館大学情報理工学部プロジェクト団体';
+
+const navItems = [
+  { href: '/', label: 'トップ' },
+  { href: '/welcome', label: '新歓情報' },
+  { href: '/event', label: '解説' },
+  { href: '/contact', label: 'お問い合わせ' },
+  { href: '/links', label: 'リンク' },
+  { href: '/members', label: '部員向け' }
+];
 
 type SiteMetaProps = {
   title: string | undefined;
@@ -32,65 +39,56 @@ const SiteMeta: FC<SiteMetaProps> = ({ title, description }) => (
 );
 
 const SiteNavigator: FC = () => (
-  <Stack spacing={1} direction="row">
-    <Link href="/">
-      <Button variant="text" className="!text-lg">
-        トップ
-      </Button>
-    </Link>
-    <Link href="/welcome">
-      <Button variant="text" className="!text-lg !font-bold">
-        新歓情報
-      </Button>
-    </Link>
-    <Link href="/event">
-      <Button variant="text" className="!text-lg">
-        解説
-      </Button>
-    </Link>
-    <Link href="/contact">
-      <Button variant="text" className="!text-lg">
-        お問い合わせ
-      </Button>
-    </Link>
-    <Link href="/links">
-      <Button variant="text" className="!text-lg">
-        リンク
-      </Button>
-    </Link>
-    <Link href="/members">
-      <Button variant="text" className="!text-lg">
-        部員向け
-      </Button>
-    </Link>
-  </Stack>
+  <nav className="flex flex-wrap items-center justify-start gap-2 md:justify-end">
+    {navItems.map((item, index) => (
+      <Link
+        key={item.href}
+        href={item.href}
+        className="group rounded-full border border-rippro-dark/20 bg-white/80 px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-rippro-dark no-underline transition duration-300 hover:-translate-y-0.5 hover:border-rippro-dark hover:bg-rippro-light-accent/35"
+      >
+        <span className="opacity-50">0{index + 1}</span> <span className="ml-1">{item.label}</span>
+      </Link>
+    ))}
+  </nav>
 );
 
 const SiteHeader: FC = () => (
-  <div className="mx-4 my-4 flex justify-between border-b-2 border-[#700] py-0.5">
-    <Link href="/" className="no-underline visited:no-underline hover:text-black hover:underline">
-      <img className="mx-[5px] mb-[5px] mt-[10px] w-[200px] align-middle" src="/rippro-rogo.png" alt="rippro-rogo" />
-    </Link>
-    <SiteNavigator />
-  </div>
+  <header className="relative overflow-hidden rounded-b-[28px] border-b border-rippro-dark/15 bg-gradient-to-r from-white via-[#fff8df] to-[#e8fbfd] px-4 pb-6 pt-5 md:px-8 md:pb-8 md:pt-7">
+    <div className="pointer-events-none absolute -left-16 top-0 h-40 w-40 rounded-full bg-rippro-light-accent/25 blur-3xl" />
+    <div className="pointer-events-none absolute -right-20 top-10 h-44 w-44 rounded-full bg-rippro-brand/20 blur-3xl" />
+    <div className="relative flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+      <Link href="/" className="max-w-max no-underline">
+        <img className="w-[220px] md:w-[260px]" src="/rippro-rogo.png" alt="RiPPro" />
+        <p className="mt-2 [font-family:var(--font-mono)] text-xs uppercase tracking-[0.22em] text-rippro-dark/75">
+          ritsumeikan programming project
+        </p>
+      </Link>
+      <SiteNavigator />
+    </div>
+  </header>
 );
 
 const SiteFooter: FC = () => {
   const year = new Date().getFullYear();
   return (
-    <div className="clear-both bg-[#004599] p-0.5 text-center text-[10px] text-white">
-      Copyright (C) 2005-{year} RiPPro All rights reserved.
-    </div>
+    <footer className="relative overflow-hidden border-t border-rippro-dark/10 bg-[#f9fbff] px-4 py-6 md:px-8">
+      <div className="absolute bottom-0 left-0 h-1.5 w-full bg-gradient-to-r from-rippro-brand via-rippro-light-accent to-rippro-dark-accent" />
+      <p className="[font-family:var(--font-mono)] text-[11px] uppercase tracking-[0.2em] text-rippro-dark/70">
+        Copyright (C) 2005-{year} RiPPro All rights reserved.
+      </p>
+    </footer>
   );
 };
 
 export const Layout: FC<PageLayoutProps> = ({ children, title, description }) => (
-  <div>
+  <>
     <SiteMeta title={title} description={description} />
-    <div className="mx-auto my-1 w-[800px] max-w-[calc(100%-8px)] rounded-[10px] bg-white shadow-[0_10px_25px_0_rgba(0,0,0,0.5)]">
-      <SiteHeader />
-      <div className="m-2">{children}</div>
-      <SiteFooter />
+    <div className="site-shell">
+      <div className="site-card">
+        <SiteHeader />
+        <main className="site-main">{children}</main>
+        <SiteFooter />
+      </div>
     </div>
-  </div>
+  </>
 );

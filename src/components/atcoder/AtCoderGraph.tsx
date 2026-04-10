@@ -123,10 +123,10 @@ class AtCoderGraph extends React.Component<{}, State> {
 
   render() {
     if (!this.state.loaded) {
-      return <div className="mx-10" />;
+      return <div className="px-2" />;
     }
 
-    return <div className="mx-10">{<this.RenderSummary />}</div>;
+    return <div className="px-2">{<this.RenderSummary />}</div>;
   }
 }
 

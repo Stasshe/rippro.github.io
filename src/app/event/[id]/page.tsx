@@ -19,7 +19,9 @@ const EventDetailPage = async ({ params }: PageProps) => {
           <Link href="/event" className="event-back-link">
             解説ページに戻る
           </Link>
-          <h2>イベントが見つかりません</h2>
+          <section className="section-block">
+            <h2>イベントが見つかりません</h2>
+          </section>
         </div>
       </Layout>
     );
@@ -36,8 +38,10 @@ const EventDetailPage = async ({ params }: PageProps) => {
         <Link href="/event" className="event-back-link">
           解説ページに戻る
         </Link>
-        <h2>{event.title}</h2>
-        <p className="event-meta">{dateText}</p>
+        <section className="section-block space-y-4 bg-gradient-to-r from-white via-[#fff8e4] to-[#e4fbfd]">
+          <h2>{event.title}</h2>
+          <p className="event-meta">{dateText}</p>
+        </section>
         <article className="event-content" dangerouslySetInnerHTML={{ __html: event.contentHtml }} />
       </div>
     </Layout>
