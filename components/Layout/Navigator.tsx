@@ -1,10 +1,9 @@
 /** @format */
 
-import { VFC } from 'react'
-import Link from 'next/link'
-
-import Stack from '@mui/material/Stack'
 import Button from '@mui/material/Button'
+import Stack from '@mui/material/Stack'
+import Link from 'next/link'
+import type { VFC } from 'react'
 
 import styles from './Navigator.module.css'
 

@@ -1,8 +1,7 @@
-import { type FC, type ReactNode } from 'react'
-
-import Header from './Header'
+import type { FC, ReactNode } from 'react'
 import Footer from './Footer'
 import Head from './Head'
+import Header from './Header'
 
 import styles from './Layout.module.css'
 

@@ -1,12 +1,11 @@
 /** @format */
 
-import { VFC } from 'react'
 import Link from 'next/link'
+import type { VFC } from 'react'
+import { Events, type EventType } from '../../components/EventList'
 import { Layout } from '../../components/Layout'
-import { EventType, Events } from '../../components/EventList'
-
-import styles from '../../styles/section.module.css'
 import eventStyles from '../../styles/event.module.css'
+import styles from '../../styles/section.module.css'
 
 const Event: VFC = () => {
   return (

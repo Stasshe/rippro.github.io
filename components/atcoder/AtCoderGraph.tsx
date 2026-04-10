@@ -1,10 +1,9 @@
 /** @format */
 
-import React from 'react'
-import styles from './AtCoderGraph.module.css'
-
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
+import React from 'react'
+import styles from './AtCoderGraph.module.css'
 
 type Props = {}
 
@@ -54,7 +53,10 @@ class AtCoderGraph extends React.Component<{}, State> {
     this.request(url).then((responseData: any) => {
       const usersInfo: UserInfoType[] = responseData
         .map((data: any) => {
-          return { userID: data.userID as string, acceptedCount: data.count as number }
+          return {
+            userID: data.userID as string,
+            acceptedCount: data.count as number
+          }
         })
         .sort((user1: UserInfoType, user2: UserInfoType) => user2.acceptedCount - user1.acceptedCount)
       this.setState({

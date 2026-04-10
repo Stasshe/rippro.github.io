@@ -1,6 +1,6 @@
 /** @format */
 
-import { VFC } from 'react'
+import type { VFC } from 'react'
 
 import styles from './Footer.module.css'
 

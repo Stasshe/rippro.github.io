@@ -1,7 +1,7 @@
 /** @format */
 
-import { VFC } from 'react'
 import Link from 'next/link'
+import type { VFC } from 'react'
 
 import styles from '../styles/section.module.css'
 import articleStyles from './IndexArticles.module.css'

@@ -18,8 +18,7 @@ function Discord() {
           質問も受け付けてるので、ぜひご活用ください！
           <a href="https://discord.gg/WpXDMNGbez">https://discord.gg/WpXDMNGbez</a>
         </p>
-        &mdash; RiPPro (@PJ_RiPPro){' '}
-        <a href="https://x.com/PJ_RiPPro/status/1907408404735545444">April 2, 2025</a>
+        &mdash; RiPPro (@PJ_RiPPro) <a href="https://x.com/PJ_RiPPro/status/1907408404735545444">April 2, 2025</a>
       </blockquote>{' '}
     </div>
   )

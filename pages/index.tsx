@@ -1,9 +1,9 @@
 /** @format */
 
 import type { NextPage } from 'next'
+import IndexArticles from '../components/IndexArticles'
 import { Layout } from '../components/Layout'
 import Twitter from '../components/Twitter'
-import IndexArticles from '../components/IndexArticles'
 
 const Home: NextPage = () => {
   return (

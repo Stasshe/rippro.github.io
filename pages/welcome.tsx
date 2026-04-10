@@ -1,13 +1,12 @@
 /** @format */
 
 import Link from 'next/link'
-import { Layout } from '../components/Layout'
 import YouTube from 'react-youtube'
-
+import Discord from '../components/discord'
+import { Layout } from '../components/Layout'
+import flyer from '../public/RiPPro_Ad.png'
 import styles from '../styles/section.module.css'
 import welcomeStyles from '../styles/welcome.module.css'
-import flyer from '../public/RiPPro_Ad.png'
-import Discord from '../components/discord'
 
 const Welcome = () => {
   const currentDate = new Date()
@@ -117,7 +116,8 @@ const Welcome = () => {
         </div>
         <h2>連絡先</h2>
         <div className={welcomeStyles.bottom}>
-          入部希望者または質問等がある方は，<Link href="/contact">お問い合わせ</Link>にアクセスしてください。
+          入部希望者または質問等がある方は，
+          <Link href="/contact">お問い合わせ</Link>にアクセスしてください。
         </div>
       </div>
     </Layout>

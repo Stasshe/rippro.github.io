@@ -1,13 +1,11 @@
 /** @format */
 
-import { VFC } from 'react'
 import { useRouter } from 'next/router'
+import type { VFC } from 'react'
+import { EventDetails, type EventDetailType } from '../../components/EventList'
 import { Layout } from '../../components/Layout'
-import { EventDetails, EventDetailType } from '../../components/EventList'
-import { useState, useEffect } from 'react'
-
-import styles from '../../styles/section.module.css'
 import detailsStyle from '../../styles/details.module.css'
+import styles from '../../styles/section.module.css'
 
 const defaultId = 'rupc2018'
 const getEntries: Function = (contentId: string, key: keyof EventDetailType) => {
@@ -71,7 +69,7 @@ const PictureElement: VFC<PictureProps> = (Props: PictureProps) => {
   if (Props.link) {
     return (
       <div style={{ textAlign: 'center' }}>
-        <img src={`/static/contestData/${Props.contestId}/${Props.link}`} />
+        <img src={`/static/contestData/${Props.contestId}/${Props.link}`} alt={`Contest ${Props.contestId} picture`} />
       </div>
     )
   } else {
@@ -216,12 +214,7 @@ const ProblemSetElement: VFC<ProblemSetProps> = (Props: ProblemSetProps) => {
 
 const EventDetail: VFC = () => {
   const router = useRouter()
-  const [contestId, setId] = useState<string>()
-  useEffect(() => {
-    if (router.asPath !== router.route) {
-      setId(String(router.query.id))
-    }
-  }, [router])
+  const contestId = typeof router.query.id === 'string' ? router.query.id : defaultId
 
   return (
     <Layout

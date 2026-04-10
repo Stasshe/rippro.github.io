@@ -1,8 +1,8 @@
 /** @format */
 
-import { VFC } from 'react'
+import type { VFC } from 'react'
 import { Layout } from '../components/Layout'
-import { SectionType, LinksType, sections } from '../components/Links'
+import { type LinksType, type SectionType, sections } from '../components/Links'
 
 import styles from '../styles/section.module.css'
 

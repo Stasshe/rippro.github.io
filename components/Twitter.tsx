@@ -1,6 +1,6 @@
 /** @format */
 
-import { VFC } from 'react'
+import type { VFC } from 'react'
 import { Timeline } from 'react-twitter-widgets'
 
 import styles from '../styles/section.module.css'

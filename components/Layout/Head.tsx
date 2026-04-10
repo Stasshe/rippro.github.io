@@ -1,9 +1,9 @@
 /** @format */
 
-import { VFC } from 'react'
 import Link from 'next/link'
-import Navigator from './Navigator'
+import type { VFC } from 'react'
 import styles from './Head.module.css'
+import Navigator from './Navigator'
 
 const Header: VFC = () => {
   return (
