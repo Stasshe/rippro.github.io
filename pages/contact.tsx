@@ -1,12 +1,12 @@
 /** @format */
 
-import type { VFC } from 'react'
+import type { FC } from 'react'
 import { Layout } from '../components/Layout'
 import Twitter from '../components/Twitter'
 
 import styles from '../styles/section.module.css'
 
-const Contact: VFC = () => {
+const Contact: FC = () => {
   return (
     <Layout
       title="お問い合わせ - RiPPro(立命館大学情報理工学部プロジェクト団体)"

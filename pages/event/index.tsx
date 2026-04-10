@@ -1,13 +1,13 @@
 /** @format */
 
 import Link from 'next/link'
-import type { VFC } from 'react'
+import type { FC } from 'react'
 import { Events, type EventType } from '../../components/EventList'
 import { Layout } from '../../components/Layout'
 import eventStyles from '../../styles/event.module.css'
 import styles from '../../styles/section.module.css'
 
-const Event: VFC = () => {
+const Event: FC = () => {
   return (
     <Layout
       title="解説 - RiPPro(立命館大学情報理工学部プロジェクト団体)"

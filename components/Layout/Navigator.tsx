@@ -3,11 +3,11 @@
 import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
 import Link from 'next/link'
-import type { VFC } from 'react'
+import type { FC } from 'react'
 
 import styles from './Navigator.module.css'
 
-const Navigator: VFC = () => {
+const Navigator: FC = () => {
   return (
     <Stack spacing={1} direction="row">
       <Link href="/">

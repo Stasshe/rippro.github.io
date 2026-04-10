@@ -1,4 +1,5 @@
 /** @format */
+import type { ReactNode } from 'react'
 import detailsStyle from '../styles/details.module.css'
 
 type problemSetType = {
@@ -13,7 +14,7 @@ type problemType = {
 
 type otherContentType = {
   title: string
-  content: JSX.Element
+  content: ReactNode
 }
 
 export type EventDetailType = {
@@ -29,8 +30,8 @@ export type EventDetailType = {
   writer?: string[]
   picture?: string
   judge: string
-  iodata?: JSX.Element
-  schedule?: JSX.Element
+  iodata?: ReactNode
+  schedule?: ReactNode
   place: string
   otherContent?: otherContentType[]
 }

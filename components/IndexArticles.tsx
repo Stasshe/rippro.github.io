@@ -1,12 +1,12 @@
 /** @format */
 
 import Link from 'next/link'
-import type { VFC } from 'react'
+import type { FC } from 'react'
 
 import styles from '../styles/section.module.css'
 import articleStyles from './IndexArticles.module.css'
 
-const IndexArticles: VFC = () => {
+const IndexArticles: FC = () => {
   return (
     <div className={articleStyles.article}>
       <div className={styles.section}>

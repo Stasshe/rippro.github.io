@@ -1,7 +1,7 @@
 /** @format */
 
 import { useRouter } from 'next/router'
-import type { VFC } from 'react'
+import type { ReactNode, FC } from 'react'
 import { EventDetails, type EventDetailType } from '../../components/EventList'
 import { Layout } from '../../components/Layout'
 import detailsStyle from '../../styles/details.module.css'
@@ -30,9 +30,9 @@ const extension: Function = (filename: string) => {
 }
 
 type IODataProps = {
-  iodata?: JSX.Element | null | undefined
+  iodata?: ReactNode | null | undefined
 }
-const IODataElement: VFC<IODataProps> = (Props: IODataProps) => {
+const IODataElement: FC<IODataProps> = (Props: IODataProps) => {
   if (Props.iodata) {
     return (
       <>
@@ -48,7 +48,7 @@ const IODataElement: VFC<IODataProps> = (Props: IODataProps) => {
 type PlaceProps = {
   place?: string | null | undefined
 }
-const PlaceElement: VFC<PlaceProps> = (Props: PlaceProps) => {
+const PlaceElement: FC<PlaceProps> = (Props: PlaceProps) => {
   if (Props.place) {
     return (
       <>
@@ -65,7 +65,7 @@ type PictureProps = {
   link?: string | null | undefined
   contestId?: string | null | undefined
 }
-const PictureElement: VFC<PictureProps> = (Props: PictureProps) => {
+const PictureElement: FC<PictureProps> = (Props: PictureProps) => {
   if (Props.link) {
     return (
       <div style={{ textAlign: 'center' }}>
@@ -78,9 +78,9 @@ const PictureElement: VFC<PictureProps> = (Props: PictureProps) => {
 }
 
 type ScheduleProps = {
-  schedule?: JSX.Element | null | undefined
+  schedule?: ReactNode | null | undefined
 }
-const ScheduleElement: VFC<ScheduleProps> = (Props: ScheduleProps) => {
+const ScheduleElement: FC<ScheduleProps> = (Props: ScheduleProps) => {
   if (Props.schedule) {
     return (
       <>
@@ -96,7 +96,7 @@ const ScheduleElement: VFC<ScheduleProps> = (Props: ScheduleProps) => {
 type EventDetailProps = {
   detailURL?: string | null | undefined
 }
-const EventDetailElement: VFC<EventDetailProps> = (Props: EventDetailProps) => {
+const EventDetailElement: FC<EventDetailProps> = (Props: EventDetailProps) => {
   if (Props.detailURL) {
     return (
       <>
@@ -112,7 +112,7 @@ const EventDetailElement: VFC<EventDetailProps> = (Props: EventDetailProps) => {
 type JudgeSiteProps = {
   judgeURL?: string | null | undefined
 }
-const JudgeSiteElement: VFC<JudgeSiteProps> = (Props: JudgeSiteProps) => {
+const JudgeSiteElement: FC<JudgeSiteProps> = (Props: JudgeSiteProps) => {
   if (Props.judgeURL) {
     return (
       <>
@@ -128,7 +128,7 @@ const JudgeSiteElement: VFC<JudgeSiteProps> = (Props: JudgeSiteProps) => {
 type EventDateProps = {
   date: { begin: string; end?: string | null | undefined }
 }
-const EventDateElement: VFC<EventDateProps> = (Props: EventDateProps) => {
+const EventDateElement: FC<EventDateProps> = (Props: EventDateProps) => {
   return (
     <>
       <h3>開催日時</h3>
@@ -141,7 +141,7 @@ const EventDateElement: VFC<EventDateProps> = (Props: EventDateProps) => {
 type WriterProps = {
   writer?: string[] | null | undefined
 }
-const WriterElement: VFC<WriterProps> = (Props: WriterProps) => {
+const WriterElement: FC<WriterProps> = (Props: WriterProps) => {
   if (Props.writer) {
     return (
       <>
@@ -167,7 +167,7 @@ type CommentaryProps = {
   day: 'Day 1' | 'Day 2' | 'Day 3' | undefined
   commentary: { title: string; link: string }[]
 }
-const CommentaryElement: VFC<CommentaryProps> = (Props: CommentaryProps) => {
+const CommentaryElement: FC<CommentaryProps> = (Props: CommentaryProps) => {
   return (
     <>
       <h3>{Props.day + ' ' || ''}解説</h3>
@@ -195,7 +195,7 @@ type ProblemSetProps = {
   problemSet: { college: string; link: string }[]
   contestId: string
 }
-const ProblemSetElement: VFC<ProblemSetProps> = (Props: ProblemSetProps) => {
+const ProblemSetElement: FC<ProblemSetProps> = (Props: ProblemSetProps) => {
   return (
     <>
       <h3>問題セット</h3>
@@ -212,7 +212,7 @@ const ProblemSetElement: VFC<ProblemSetProps> = (Props: ProblemSetProps) => {
   )
 }
 
-const EventDetail: VFC = () => {
+const EventDetail: FC = () => {
   const router = useRouter()
   const contestId = typeof router.query.id === 'string' ? router.query.id : defaultId
 

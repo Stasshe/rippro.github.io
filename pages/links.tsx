@@ -1,12 +1,12 @@
 /** @format */
 
-import type { VFC } from 'react'
+import type { FC } from 'react'
 import { Layout } from '../components/Layout'
 import { type LinksType, type SectionType, sections } from '../components/Links'
 
 import styles from '../styles/section.module.css'
 
-const LinkSection: VFC<SectionType> = (Props: SectionType): JSX.Element => {
+const LinkSection: FC<SectionType> = (Props: SectionType) => {
   return (
     <>
       <h3>{Props.title}</h3>
@@ -25,7 +25,7 @@ const LinkSection: VFC<SectionType> = (Props: SectionType): JSX.Element => {
   )
 }
 
-const Links: VFC = () => {
+const Links: FC = () => {
   return (
     <Layout
       title="リンク - RiPPro(立命館大学情報理工学部プロジェクト団体)"

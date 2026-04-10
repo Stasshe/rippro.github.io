@@ -1,11 +1,11 @@
 /** @format */
 
 import Link from 'next/link'
-import type { VFC } from 'react'
+import type { FC } from 'react'
 import styles from './Head.module.css'
 import Navigator from './Navigator'
 
-const Header: VFC = () => {
+const Header: FC = () => {
   return (
     <div className={styles.head}>
       <Link href="/" className={styles.logo}>

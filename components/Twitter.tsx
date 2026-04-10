@@ -1,11 +1,11 @@
 /** @format */
 
-import type { VFC } from 'react'
+import type { FC } from 'react'
 import { Timeline } from 'react-twitter-widgets'
 
 import styles from '../styles/section.module.css'
 
-const Header: VFC = () => {
+const Header: FC = () => {
   return (
     <div className={styles.section}>
       <h2>Twitter</h2>
