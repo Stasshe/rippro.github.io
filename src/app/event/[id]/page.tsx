@@ -1,7 +1,8 @@
 /** @format */
 
 import type { FC, ReactNode } from 'react';
-import { eventDataMap, type RawEventData } from '@/lib/eventData';
+import type { RawEventData } from '@/types/event';
+import { eventDataMap } from '@/lib/generatedEventData';
 import { Layout } from '../../../components/Layout';
 
 const defaultId = 'rupc2018';
