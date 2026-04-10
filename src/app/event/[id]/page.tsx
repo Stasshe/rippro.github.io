@@ -1,37 +1,30 @@
 /** @format */
 
-'use client'
+'use client';
 
-import { useParams } from 'next/navigation'
-import type { FC, ReactNode } from 'react'
-import { EventDetails, type EventDetailType } from '@/src/components/EventList'
-import { Layout } from '@/src/components/Layout'
+import { useParams } from 'next/navigation';
+import type { FC, ReactNode } from 'react';
+import { EventDetails, type EventDetailType } from '../../../components/EventList';
+import { Layout } from '../../../components/Layout';
 
-const defaultId = 'rupc2018'
+const defaultId = 'rupc2018';
 const getEntries: Function = (contentId: string, key: keyof EventDetailType) => {
-  if (contentId in EventDetails) {
-    if (key in EventDetails[contentId]) {
-      return EventDetails[contentId][key]
-    } else {
-      return ''
-    }
-  } else {
-    if (key in EventDetails[defaultId]) {
-      return EventDetails[defaultId][key]
-    } else {
-      return ''
-    }
+  const eventDetail = EventDetails[contentId] ?? EventDetails[defaultId];
+  if (!eventDetail) {
+    return '';
   }
-}
+
+  return eventDetail[key] ?? '';
+};
 
 const extension: Function = (filename: string) => {
-  const parts = filename.split('.')
-  return parts[parts.length - 1]
-}
+  const parts = filename.split('.');
+  return parts[parts.length - 1];
+};
 
 type IODataProps = {
-  iodata?: ReactNode | null | undefined
-}
+  iodata?: ReactNode | null | undefined;
+};
 const IODataElement: FC<IODataProps> = (Props: IODataProps) => {
   if (Props.iodata) {
     return (
@@ -39,15 +32,15 @@ const IODataElement: FC<IODataProps> = (Props: IODataProps) => {
         <h3>問題文・入出力データ</h3>
         {Props.iodata}
       </>
-    )
+    );
   } else {
-    return <></>
+    return <></>;
   }
-}
+};
 
 type PlaceProps = {
-  place?: string | null | undefined
-}
+  place?: string | null | undefined;
+};
 const PlaceElement: FC<PlaceProps> = (Props: PlaceProps) => {
   if (Props.place) {
     return (
@@ -55,31 +48,31 @@ const PlaceElement: FC<PlaceProps> = (Props: PlaceProps) => {
         <h3>会場</h3>
         <p>{Props.place}</p>
       </>
-    )
+    );
   } else {
-    return <></>
+    return <></>;
   }
-}
+};
 
 type PictureProps = {
-  link?: string | null | undefined
-  contestId?: string | null | undefined
-}
+  link?: string | null | undefined;
+  contestId?: string | null | undefined;
+};
 const PictureElement: FC<PictureProps> = (Props: PictureProps) => {
   if (Props.link) {
     return (
       <div style={{ textAlign: 'center' }}>
         <img src={`/static/contestData/${Props.contestId}/${Props.link}`} alt={`Contest ${Props.contestId} picture`} />
       </div>
-    )
+    );
   } else {
-    return <></>
+    return <></>;
   }
-}
+};
 
 type ScheduleProps = {
-  schedule?: ReactNode | null | undefined
-}
+  schedule?: ReactNode | null | undefined;
+};
 const ScheduleElement: FC<ScheduleProps> = (Props: ScheduleProps) => {
   if (Props.schedule) {
     return (
@@ -87,15 +80,15 @@ const ScheduleElement: FC<ScheduleProps> = (Props: ScheduleProps) => {
         <h3>合宿内容</h3>
         {Props.schedule}
       </>
-    )
+    );
   } else {
-    return <></>
+    return <></>;
   }
-}
+};
 
 type EventDetailProps = {
-  detailURL?: string | null | undefined
-}
+  detailURL?: string | null | undefined;
+};
 const EventDetailElement: FC<EventDetailProps> = (Props: EventDetailProps) => {
   if (Props.detailURL) {
     return (
@@ -103,15 +96,15 @@ const EventDetailElement: FC<EventDetailProps> = (Props: EventDetailProps) => {
         <h3>イベント概要</h3>
         <a href={Props.detailURL}>{Props.detailURL}</a>
       </>
-    )
+    );
   } else {
-    return <></>
+    return <></>;
   }
-}
+};
 
 type JudgeSiteProps = {
-  judgeURL?: string | null | undefined
-}
+  judgeURL?: string | null | undefined;
+};
 const JudgeSiteElement: FC<JudgeSiteProps> = (Props: JudgeSiteProps) => {
   if (Props.judgeURL) {
     return (
@@ -119,15 +112,15 @@ const JudgeSiteElement: FC<JudgeSiteProps> = (Props: JudgeSiteProps) => {
         <h3>ジャッジシステム</h3>
         <a href={Props.judgeURL}>{Props.judgeURL}</a>
       </>
-    )
+    );
   } else {
-    return <></>
+    return <></>;
   }
-}
+};
 
 type EventDateProps = {
-  date: { begin: string; end?: string | null | undefined }
-}
+  date: { begin: string; end?: string | null | undefined };
+};
 const EventDateElement: FC<EventDateProps> = (Props: EventDateProps) => {
   return (
     <>
@@ -135,12 +128,12 @@ const EventDateElement: FC<EventDateProps> = (Props: EventDateProps) => {
       {Props.date.begin}
       {Props.date.end ? ` - ${Props.date.end}` : ''}
     </>
-  )
-}
+  );
+};
 
 type WriterProps = {
-  writer?: string[] | null | undefined
-}
+  writer?: string[] | null | undefined;
+};
 const WriterElement: FC<WriterProps> = (Props: WriterProps) => {
   if (Props.writer) {
     return (
@@ -152,21 +145,21 @@ const WriterElement: FC<WriterProps> = (Props: WriterProps) => {
               <li key={writer}>
                 <a href={`https://twitter.com/${writer}`}>{`@${writer}`}</a>
               </li>
-            )
+            );
           })}
         </ul>
       </>
-    )
+    );
   } else {
-    return <></>
+    return <></>;
   }
-}
+};
 
 type CommentaryProps = {
-  contestId: string
-  day: 'Day 1' | 'Day 2' | 'Day 3' | undefined
-  commentary: { title: string; link: string }[]
-}
+  contestId: string;
+  day: 'Day 1' | 'Day 2' | 'Day 3' | undefined;
+  commentary: { title: string; link: string }[];
+};
 const CommentaryElement: FC<CommentaryProps> = (Props: CommentaryProps) => {
   return (
     <>
@@ -184,17 +177,17 @@ const CommentaryElement: FC<CommentaryProps> = (Props: CommentaryProps) => {
                 <a href={`/static/contestData/${Props.contestId}/${commentary.link}`}>{extension(commentary.link)}</a>
               </td>
             </tr>
-          )
+          );
         })}
       </table>
     </>
-  )
-}
+  );
+};
 
 type ProblemSetProps = {
-  problemSet: { college: string; link: string }[]
-  contestId: string
-}
+  problemSet: { college: string; link: string }[];
+  contestId: string;
+};
 const ProblemSetElement: FC<ProblemSetProps> = (Props: ProblemSetProps) => {
   return (
     <>
@@ -205,36 +198,36 @@ const ProblemSetElement: FC<ProblemSetProps> = (Props: ProblemSetProps) => {
             <li key={college.college}>
               {college.link ? <a href={college.link}>{college.college}</a> : <>{college.college}</>}
             </li>
-          )
+          );
         })}
       </ul>
     </>
-  )
-}
+  );
+};
 
 const sectionStyle = {
   marginLeft: '8px',
   padding: '2px',
   fontSize: '11pt'
-}
+};
 
 const tableStyle = {
   borderCollapse: 'collapse' as const,
   width: '100%'
-}
+};
 
 const trStyle = {
   border: '1px solid black'
-}
+};
 
 const tdStyle = {
   border: '1px solid black',
   padding: '8px'
-}
+};
 
 const EventDetail: FC = () => {
-  const params = useParams<{ id?: string }>()
-  const contestId = typeof params?.id === 'string' ? params.id : defaultId
+  const params = useParams<{ id?: string }>();
+  const contestId = typeof params?.id === 'string' ? params.id : defaultId;
 
   return (
     <Layout
@@ -259,7 +252,7 @@ const EventDetail: FC = () => {
         <WriterElement writer={getEntries(contestId, 'writer')} />
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default EventDetail
+export default EventDetail;

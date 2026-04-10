@@ -1,14 +1,14 @@
-/** @format */
+'use client';
 
-import type { FC } from 'react'
-import { Layout } from '../../components/Layout'
-import { type LinksType, type SectionType, sections } from '../../components/Links'
+import type { FC } from 'react';
+import { Layout } from '../../components/Layout';
+import { type LinksType, type SectionType, sections } from '../../components/Links';
 
 const sectionStyle = {
   marginLeft: '8px',
   padding: '2px',
   fontSize: '11pt'
-}
+};
 
 const LinkSection: FC<SectionType> = (Props: SectionType) => {
   return (
@@ -22,12 +22,12 @@ const LinkSection: FC<SectionType> = (Props: SectionType) => {
                 {linkItem.title}
               </a>
             </li>
-          )
+          );
         })}
       </ul>
     </>
-  )
-}
+  );
+};
 
 const Links: FC = () => {
   return (
@@ -38,11 +38,11 @@ const Links: FC = () => {
       <div style={sectionStyle}>
         <h2>リンク</h2>
         {sections.map((section: SectionType) => {
-          return <LinkSection {...section} key={section.title} />
+          return <LinkSection {...section} key={section.title} />;
         })}
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default Links
+export default Links;

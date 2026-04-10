@@ -1,14 +1,15 @@
 /** @format */
+'use client';
 
-import AtCoderGraph from '../../components/atcoder/AtCoderGraph'
-import { Layout } from '../../components/Layout'
+import AtCoderGraph from '../../components/atcoder/AtCoderGraph';
+import { Layout } from '../../components/Layout';
 
 const AtCoderPage = () => {
   const sectionStyle = {
     marginLeft: '8px',
     padding: '2px',
     fontSize: '11pt'
-  }
+  };
 
   const heading2Style = {
     margin: '24px 0',
@@ -16,12 +17,12 @@ const AtCoderPage = () => {
     color: '#000',
     background: '#cdf0fd',
     borderLeft: 'solid 5px #6cbad8'
-  }
+  };
 
   const heading3Style = {
     margin: '16px 0',
     borderBottom: '1px dashed #6cbad8'
-  }
+  };
 
   return (
     <Layout title="部員向けページ - RiPPro(立命館大学情報理工学部プロジェクト団体)" description="部員向けページ">
@@ -39,7 +40,7 @@ const AtCoderPage = () => {
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default AtCoderPage
+export default AtCoderPage;
