@@ -41,10 +41,9 @@ const pStyle: CSSProperties = {
 };
 
 const youtubeStyle: CSSProperties = {
-  position: 'relative',
   width: '100%',
-  paddingTop: '56.25%'
-};
+  aspectRatio: '16 / 9'
+} as CSSProperties;
 
 const Welcome = () => {
   const currentDate = new Date();
@@ -130,7 +129,11 @@ const Welcome = () => {
           </p>
         </div>
         <div style={youtubeStyle}>
-          <YouTube videoId="Q4gTV4r0zRs" opts={{ width: '100%', height: '100%' }} />
+          <YouTube
+            videoId="Q4gTV4r0zRs"
+            opts={{ width: '100%', height: '100%' }}
+            style={{ width: '100%', height: '100%' }}
+          />
         </div>
         <div>
           <p style={lineParagraphStyle}>
