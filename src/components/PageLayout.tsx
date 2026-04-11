@@ -24,10 +24,10 @@ type SiteMetaProps = {
 
 const navButtonSx = {
   minWidth: 0,
-  px: { xs: 1, sm: 1.5 },
+  px: { xs: 1, sm: 1.8 },
   py: 0.5,
   whiteSpace: 'nowrap',
-  fontSize: { xs: '0.84rem', sm: '0.92rem' }
+  fontSize: { xs: '0.84rem', sm: '1rem' }
 };
 
 const SiteMeta: FC<SiteMetaProps> = ({ title, description }) => (
@@ -106,7 +106,7 @@ const SiteHeader: FC = () => (
 const SiteFooter: FC = () => {
   const year = new Date().getFullYear();
   return (
-    <footer className="mt-2 border-t border-gray-200 text-center text-sm tracking-normal text-gray-500">
+    <footer className="mt-6 border-t border-gray-200 text-center text-sm tracking-normal text-gray-500">
       <p>&copy; 2005-{year} RiPPro All rights reserved.</p>
     </footer>
   );

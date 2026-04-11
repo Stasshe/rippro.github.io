@@ -4,7 +4,6 @@
 import type { NextPage } from 'next';
 import IndexArticles from '../components/IndexArticles';
 import { Layout } from '../components/PageLayout';
-import Twitter from '../components/Twitter';
 
 const Home: NextPage = () => {
   return (
@@ -15,7 +14,6 @@ const Home: NextPage = () => {
       <div>
         <IndexArticles />
       </div>
-      <Twitter />
     </Layout>
   );
 };
