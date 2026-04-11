@@ -73,11 +73,14 @@ const SiteNavigator: FC = () => {
             <Button
               variant="text"
               sx={navButtonSx}
-              className={
-                isActive
-                  ? '!font-semibold !text-black bg-slate-100'
-                  : '!font-normal !text-gray-600 transition-colors hover:!text-gray-900'
-              }
+              className={`
+                !transition-all !duration-200 active:!scale-95
+                ${
+                  isActive
+                    ? '!font-semibold !text-black bg-gray-200'
+                    : '!font-normal !text-gray-600 hover:bg-gray-100 hover:!text-black'
+                }
+              `}
               aria-current={isActive ? 'page' : undefined}
             >
               {item.label}
@@ -90,7 +93,7 @@ const SiteNavigator: FC = () => {
 };
 
 const SiteHeader: FC = () => (
-  <header className="mt-6 flex flex-col items-center gap-3 border-b border-slate-300/70 pb-6 lg:flex-row lg:items-end lg:justify-between">
+  <header className="mt-3 flex flex-col items-center gap-3 border-b border-slate-300/70 pb-6 lg:flex-row lg:items-end lg:justify-between">
     <Link href="/" className="transition-opacity hover:opacity-1">
       <img className="w-[180px] object-contain sm:w-[210px]" src="/rippro-rogo.png" alt="rippro-rogo" />
     </Link>
@@ -103,7 +106,7 @@ const SiteHeader: FC = () => (
 const SiteFooter: FC = () => {
   const year = new Date().getFullYear();
   return (
-    <footer className="mt-20 border-t border-gray-200 py-8 text-center text-sm tracking-normal text-gray-500">
+    <footer className="mt-2 border-t border-gray-200 text-center text-sm tracking-normal text-gray-500">
       <p>&copy; 2005-{year} RiPPro All rights reserved.</p>
     </footer>
   );
