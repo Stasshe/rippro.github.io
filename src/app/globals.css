@@ -99,7 +99,7 @@
   }
 
   a {
-    color: var(--accent-700);
+    color: #0056b3;
     text-decoration: none;
     border-bottom: 1px solid rgba(31, 79, 134, 0.5);
     transition:

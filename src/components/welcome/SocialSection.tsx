@@ -29,7 +29,8 @@ const linkRowStyle: CSSProperties = {
   marginTop: '10px',
   display: 'flex',
   gap: '12px',
-  flexWrap: 'wrap'
+  flexWrap: 'wrap',
+  justifyContent: 'flex-end'
 };
 
 const tweetStyle: CSSProperties = {
@@ -49,6 +50,7 @@ function SocialSection() {
           RiPProの新歓用Discordサーバーです。講演会や入団に興味のある方は自由に参加できます。質問も歓迎です。
         </p>
         <div style={linkRowStyle}>
+          ⇒
           <a href="https://discord.gg/WpXDMNGbez" target="_blank" rel="noopener noreferrer">
             Discordに参加する
           </a>
@@ -68,6 +70,7 @@ function SocialSection() {
           </a>
         </div>
         <div style={linkRowStyle}>
+          ⇒
           <a href="https://x.com/PJ_RiPPro" target="_blank" rel="noopener noreferrer">
             @PJ_RiPPro
           </a>
