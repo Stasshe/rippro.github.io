@@ -2,7 +2,7 @@
 
 import type { FC } from 'react';
 import { Layout } from '../../components/PageLayout';
-import Twitter from '../../components/Twitter';
+import SocialSection from '@/components/welcome/SocialSection';
 
 const sectionStyle = {
   marginLeft: '8px',
@@ -41,7 +41,13 @@ const Contact: FC = () => {
         <br />
         （部員の授業スケジュールの兼ね合いで毎学期始めに曜日を決定しています）
       </div>
-      <Twitter />
+      <div style={{ marginTop: '20px' }}>
+        <h2>SNS</h2>
+        <p>
+          RiPProの新歓用SNSも開設しています。講演会や入団に興味のある方は、自由に参加できます。質問も受け付けているので、ぜひご活用ください！
+        </p>
+        <SocialSection />
+      </div>
     </Layout>
   );
 };

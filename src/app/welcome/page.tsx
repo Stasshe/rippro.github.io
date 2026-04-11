@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import YouTube from 'react-youtube';
-import Discord from '../../components/discord';
+import SocialSection from '../../components/welcome/SocialSection';
 import { Layout } from '../../components/PageLayout';
 import type { CSSProperties } from 'react';
 
@@ -63,8 +63,8 @@ const Welcome = () => {
   return (
     <Layout title="新歓情報 - RiPPro(立命館大学情報理工学部プロジェクト団体)" description="新歓用ページ">
       <div style={sectionStyle}>
-        <h2>新歓Discordサーバー</h2>
-        <Discord />
+        <h2>SNS</h2>
+        <SocialSection />
         <h2>新歓講演会</h2>
         <div>
           <p>私たちRiPRroの普段の活動内容や配布したビラの問題の解説などを行います！</p>
