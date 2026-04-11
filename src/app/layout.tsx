@@ -1,6 +1,12 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
+import { Noto_Sans_JP } from 'next/font/google';
 import './globals.css';
+
+const notoSansJp = Noto_Sans_JP({
+  weight: ['400', '500', '600', '700'],
+  display: 'swap'
+});
 
 export const metadata: Metadata = {
   title: 'RiPPro(立命館大学情報理工学部プロジェクト団体)',
@@ -15,7 +21,7 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="ja">
-      <body>{children}</body>
+      <body className={notoSansJp.className}>{children}</body>
     </html>
   );
 }
