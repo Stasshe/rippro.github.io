@@ -28,16 +28,20 @@ const bottomStyle: CSSProperties = {
 };
 
 const flyerStyle: CSSProperties = {
-  justifyContent: 'flex-end',
   display: 'flex',
-  position: 'relative',
-  paddingRight: '2%'
+  justifyContent: 'center',
+  marginTop: '8px'
+};
+
+const flyerImageStyle: CSSProperties = {
+  width: 'min(280px, 80vw)',
+  height: 'auto'
 };
 
 const pStyle: CSSProperties = {
-  float: 'right',
+  textAlign: 'center',
   fontSize: 'small',
-  paddingRight: '2%'
+  marginTop: '8px'
 };
 
 const youtubeStyle: CSSProperties = {
@@ -72,7 +76,7 @@ const Welcome = () => {
           </ul>
         </div>
         <a href="RiPPro_Ad.png" style={flyerStyle} target="_blank" rel="noreferrer">
-          <img src="RiPPro_Ad.png" width="20%" alt="" />
+          <img src="RiPPro_Ad.png" style={flyerImageStyle} alt="RiPPro 新歓ビラ" />
         </a>
         <p style={pStyle}>クリックで拡大画像を表示</p>
         <h2>競プロ新歓講習</h2>
