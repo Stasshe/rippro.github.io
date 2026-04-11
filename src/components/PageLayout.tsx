@@ -45,7 +45,7 @@ const SiteMeta: FC<SiteMetaProps> = ({ title, description }) => (
 const navItems = [
   { href: '/', label: 'トップ' },
   { href: '/welcome', label: '新歓情報' },
-  { href: '/event', label: '解説' },
+  { href: '/event', label: 'ブログ' },
   { href: '/contact', label: 'お問い合わせ' },
   { href: '/links', label: 'リンク' },
   { href: '/members', label: '部員向け' }

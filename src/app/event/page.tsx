@@ -7,8 +7,8 @@ const Event = () => {
 
   return (
     <Layout
-      title="解説 - RiPPro(立命館大学情報理工学部プロジェクト団体)"
-      description="過去に開催したイベント一覧ページ"
+      title="ブログ - RiPPro(立命館大学情報理工学部プロジェクト団体)"
+      description="過去に開催・参加したイベント一覧ページ"
     >
       <div className="event-page event-list">
         {events.map((event) => {
