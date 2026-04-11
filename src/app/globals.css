@@ -148,7 +148,6 @@
 .event-detail-link {
   display: flex;
   justify-content: flex-end;
-  margin-top: 10px;
 }
 
 .event-back-link {
